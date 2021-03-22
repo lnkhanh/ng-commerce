@@ -1,10 +1,11 @@
 <div align="center">
-# NgCommerce
+# Angular Commerce
 
 ![](https://ng-commerce.com/images/logo.png)
 
 ##### A modern, lightweight and powerful e-commerce app built on NodeJS
 </div>
+
 ## Overview
 NgCommerce is a ecommerce platform for online merchants. We provide a professional and reliable foundation from which to build a successful online store.
 
