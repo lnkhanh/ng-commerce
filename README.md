@@ -11,7 +11,9 @@
 NgCommerce is a ecommerce platform for online merchants. We provide a professional and reliable foundation from which to build a successful online store.
 
 Homepage: [https://ng-commerce.com](https://ng-commerce.com)
+
 Live demo: [Admin](https://ng-commerce.com/demo/admin/),  [Frontside](https://demo.ng-commerce.com/home)
+
 Documentation: [https://ng-commerce.com/documentation](https://ng-commerce.com/documentation)
 
 ## Issues
