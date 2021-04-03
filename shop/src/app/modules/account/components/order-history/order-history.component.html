@@ -1,0 +1,47 @@
+<div class="limiter">
+  <div class="container-table100">
+    <div class="wrap-table100">
+      <div class="table100">
+        <table>
+          <thead>
+            <tr class="table100-head">
+              <th class="column1">Order #</th>
+              <th class="column2">Store</th>
+              <th class="column3">Status</th>
+              <th class="column4">Date</th>
+              <th class="column5">Quantity</th>
+              <th class="column6">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngIf="(orders$ | async) as orders">
+              <ng-container *ngIf="orders.length; else noOrder">
+                <tr *ngFor="let order of orders">
+                  <td class="column1">
+                    <a routerLink="/account/order-history/view/{{order.code}}">{{ order.code }}</a>
+                  </td>
+                  <td class="column2">{{ order.storeName }}</td>
+                  <td class="column3">
+                    <span class="badge {{getOrderStatusCls(order.status)}}">
+                      {{ getOrderStatusName(order.status) }}
+                    </span>
+                  </td>
+                  <td class="column4">{{ order.createdDate }}</td>
+                  <td class="column5">{{ order.qty}}</td>
+                  <td class="column6">{{ order.total | formatCurrency }}</td>
+                </tr>
+              </ng-container>
+              <ng-template #noOrder>
+                <tr>
+                  <td colspan="6" class="text-center">No orders found!</td>
+                </tr>
+              </ng-template>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<paginator [paginator$]="paginator$" [pageSizeOptions]="pageSizeOptions" [loading$]="loadingList$"
+  (doChange)="handleOnChangePaging($event)"></paginator>

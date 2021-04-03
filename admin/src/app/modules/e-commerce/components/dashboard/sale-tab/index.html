@@ -1,0 +1,45 @@
+<div class="dashboard-sale-tab">
+  <!-- Sale chart -->
+  <div class="sale-activity-chart">
+    <div class="row">
+      <div class="col-6">
+        <h3>Top sale products</h3>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <div class="filter-box">
+          <select class="form-control" name="select" [(ngModel)]="topSale" (change)="handleOnChangeTopSale($event)">
+            <option *ngFor="let option of topSaleOptions" [value]="option">Top {{ option }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-4">
+      <div class="col-12">
+        <dashboard-chart
+          [chartName]="'sale-detail-chart'"
+          [config]="saleActivity && getSaleChartConfig(saleActivity.SaleChartData)"
+          [loading]="loading"
+        ></dashboard-chart>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sale data table -->
+  <div class="detail-product-sold">
+    <div class="row">
+      <div class="col">
+        <h3>Sale Activities By Product</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ecom-list
+          [dataSource]="saleActivity && saleActivity.Sales || []"
+          [columns]="definedColumns"
+          [loading]="loading"
+          [emptyMessage]="'Have no products!'"
+        ></ecom-list>
+      </div>
+    </div>
+  </div>
+</div>

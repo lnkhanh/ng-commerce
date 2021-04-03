@@ -1,0 +1,352 @@
+{ 
+    "_id" : ObjectId("5faf4cd9a2edaf25adb93582"), 
+    "name" : "Mocha", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf4cd9a2edaf25adb93582/270_crop_MOCHA-1605324205097.png"
+    ], 
+    "isDeleted" : false, 
+    "retailPrice" : NumberInt(59000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf40c8d4cfea1a0d92c1d7"), 
+    "__v" : NumberInt(0), 
+    "description" : "abc", 
+    "storeId" : null
+}
+{ 
+    "_id" : ObjectId("5faf4e243b478e25dccf3448"), 
+    "name" : "Latte", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf4e243b478e25dccf3448/270_crop_LATTE-1605325005703.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(54000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf40c8d4cfea1a0d92c1d7"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf4e453b478e25dccf3449"), 
+    "name" : "Cappuccino", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf4e453b478e25dccf3449/270_crop_CAPPUCINO-1605324489659.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(54000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf40c8d4cfea1a0d92c1d7"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf4e593b478e25dccf344a"), 
+    "name" : "Americano", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf4e593b478e25dccf344a/270_crop_AMERICANO-1605324473506.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(44000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf40c8d4cfea1a0d92c1d7"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf4e753b478e25dccf344b"), 
+    "name" : "Espresso", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf4e753b478e25dccf344b/270_crop_ESPRESSO-1605324994973.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(44000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf40c8d4cfea1a0d92c1d7"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf4e973b478e25dccf344c"), 
+    "name" : "Caramel Macchiato", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf4e973b478e25dccf344c/270_crop_CARAMEL-MACCHIATO-1605324983540.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(59000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf40c8d4cfea1a0d92c1d7"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf51f03b478e25dccf344d"), 
+    "name" : "Green Tea Freeze", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf51f03b478e25dccf344d/270_crop_GTF-1605325357500.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(49000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4412d4cfea1a0d92c1d8"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf52013b478e25dccf344e"), 
+    "name" : "Cookies & Cream", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf52013b478e25dccf344e/270_crop_COOKIES-CREAM-1605325371812.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(49000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4412d4cfea1a0d92c1d8"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf52103b478e25dccf344f"), 
+    "name" : "Chocolate Freeze", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf52103b478e25dccf344f/270_crop_CHOCOLATE-FREEZE-1605325385166.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(49000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4412d4cfea1a0d92c1d8"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf528c3b478e25dccf3450"), 
+    "name" : "Caramel Coffee Freeze", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf528c3b478e25dccf3450/270_crop_-1605325516128.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(49000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4057d4cfea1a0d92c1d6"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf52a23b478e25dccf3451"), 
+    "name" : "Classic Phin Freeze", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf52a23b478e25dccf3451/270_crop_CLASSIC-FREEZE-1605325505654.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(49000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4057d4cfea1a0d92c1d6"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf58eead9dbf2f323424f7"), 
+    "name" : "Lychee Tea", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf58eead9dbf2f323424f7/270_crop_TRATHANHDAO-1605327240695.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(39000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf441ad4cfea1a0d92c1d9"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5903ad9dbf2f323424f8"), 
+    "name" : "Peach Jelly Tea", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5903ad9dbf2f323424f8/270_crop_TRATHACHDAO-1605327256046.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(39000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf441ad4cfea1a0d92c1d9"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf591aad9dbf2f323424f9"), 
+    "name" : "Peach Leamongrass Tea", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf591aad9dbf2f323424f9/270_crop_TRATHACHVAI_1-1605327268207.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(39000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf441ad4cfea1a0d92c1d9"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf592aad9dbf2f323424fa"), 
+    "name" : "Golden Lotus tea", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf592aad9dbf2f323424fa/270_crop_TRASENVANG-1605327218214.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(39000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf441ad4cfea1a0d92c1d9"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5b433a30d0302dfe17e4"), 
+    "name" : "Grilled Pork", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5b433a30d0302dfe17e4/270_crop_BMTHITNUONG-1605327803672.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(19000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4420d4cfea1a0d92c1da"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5b543a30d0302dfe17e5"), 
+    "name" : "Pork Meatball", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5b543a30d0302dfe17e5/270_crop_BMXIUMAI-1605327817558.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(19000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4420d4cfea1a0d92c1da"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5b773a30d0302dfe17e6"), 
+    "name" : "Roast Pork & Pork Sausage", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5b773a30d0302dfe17e6/270_crop_BMCHALUAXAXIU-1605327850940.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(19000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4420d4cfea1a0d92c1da"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5b963a30d0302dfe17e7"), 
+    "name" : "Roast Chicken", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5b963a30d0302dfe17e7/270_crop_BMGAXE-1605327834989.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(19000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf4420d4cfea1a0d92c1da"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5c763a30d0302dfe17e8"), 
+    "name" : "Coffee Cheese Cake", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5c763a30d0302dfe17e8/270_crop_PHOMAICAPHE-1605328349770.jpg"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf442ed4cfea1a0d92c1db"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5c953a30d0302dfe17e9"), 
+    "name" : "Passion Fruit Cheese Cake", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5c953a30d0302dfe17e9/270_crop_PHOMAICHANHDAY-1605328406870.jpg"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf442ed4cfea1a0d92c1db"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5cbd3a30d0302dfe17ea"), 
+    "name" : "Green Tea Cheese Cake", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5cbd3a30d0302dfe17ea/270_crop_PHOMAITRAXANH-1605328368269.jpg"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf442ed4cfea1a0d92c1db"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5d0d3a30d0302dfe17eb"), 
+    "name" : "Caramel Cheese Cake", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5d0d3a30d0302dfe17eb/270_crop_CARAMELPHOMAI-1605328299568.jpg"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf442ed4cfea1a0d92c1db"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5d273a30d0302dfe17ec"), 
+    "name" : "Tiramisu Cake", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5d273a30d0302dfe17ec/270_crop_TIRAMISU-1605328442575.jpg"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf442ed4cfea1a0d92c1db"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5d473a30d0302dfe17ed"), 
+    "name" : "Banana Cake", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5d473a30d0302dfe17ed/270_crop_BANHCHUOI-1605328281373.jpg"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf442ed4cfea1a0d92c1db"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5d573a30d0302dfe17ee"), 
+    "name" : "Cocoa Mouse Cake", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5d573a30d0302dfe17ee/270_crop_MOUSSECACAO (1)-1605328321819.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf442ed4cfea1a0d92c1db"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5d7a3a30d0302dfe17ef"), 
+    "name" : "Peach Mouse Cake", 
+    "images" : [
+        "http://api.gyment.local/api/admin/v1/assets/products/5faf5d7a3a30d0302dfe17ef/270_crop_MOUSSEDAO-1605328432850.png"
+    ], 
+    "isDeleted" : false, 
+    "description" : "", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : null, 
+    "categoryId" : ObjectId("5faf442ed4cfea1a0d92c1db"), 
+    "__v" : NumberInt(0)
+}

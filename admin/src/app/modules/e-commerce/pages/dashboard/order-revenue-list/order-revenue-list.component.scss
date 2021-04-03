@@ -1,0 +1,40 @@
+.mat-column-orderId {
+  flex: 0 0 100px;
+}
+.mat-column-orderDate {
+  flex: 0 0 90px;
+}
+.mat-column-status {
+  flex: 0 0 130px;
+
+  .status {
+    margin-left: 8px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 13px;
+    background-color: rgba(100, 108, 154, .2);
+
+    &.complete {
+      color: var(--success);
+      background-color: rgba(29, 201, 183, 0.2);
+    }
+    &.pending {
+      color: var(--warning);
+      background-color: rgba(255, 184, 34, 0.2);
+    }
+    &.cancelled {
+      color: var(--danger);
+      background-color: rgba(237, 28, 36, 0.2);
+    }
+    &.shipped {
+      color: var(--purple);
+      background-color: rgba(111, 66, 193, 0.2);
+    }
+  }
+}
+.mat-column-merchTotal,
+.mat-column-salesTax,
+.mat-column-freight,
+.mat-column-orderTotal {
+  flex: 0 0 110px;
+}

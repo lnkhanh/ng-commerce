@@ -1,0 +1,36 @@
+<div class="product-grid" *ngIf="product">
+  <div class="product-image">
+    <div class="image">
+      <lazy-img [src]="product.images[0]"></lazy-img>
+    </div>
+    <ul class="product-links">
+      <li>
+        <a class="btn-icon" data-tip="Add to Wishlist" (click)="onAddToWishList()">
+          <i class="fas fa-heart"></i>
+        </a>
+      </li>
+      <li>
+        <a class="btn-icon" data-tip="Quick View" (click)="onOpenProductQuickViewModal()">
+          <i class="fa fa-search"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="product-content">
+    <!-- <ul class="rating">
+      <li class="fas fa-star"></li>
+      <li class="fas fa-star"></li>
+      <li class="fas fa-star"></li>
+      <li class="fas fa-star"></li>
+      <li class="far fa-star"></li>
+    </ul> -->
+    <h3 class="title">
+      <a [routerLink]="['/product/' + product.slug]">{{product.name}}</a>
+    </h3>
+    <div class="price">
+      <span *ngIf="product.salePrice">{{product.salePrice | formatCurrency}}</span>
+      {{product.retailPrice | formatCurrency}}
+    </div>
+    <button class="add-to-cart" (click)="onAddToCart()">add to cart</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+:host {
+	background-color: #fff;
+	display: block;
+	border-radius: 4px;
+	padding: 15px;
+}
+
+upload-avatar {
+	display: block;
+	margin: auto;
+	
+	::ng-deep.img-container {
+		border: 1px dashed #78a206;
+		border-radius: 10px;
+
+		img {
+			padding: 5px;
+		}
+	}
+}

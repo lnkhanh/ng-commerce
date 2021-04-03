@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-md-8 pos-left-side" *ngIf="products$">
+		<div class="product-list clearfix">
+			<div *ngIf="categories$">
+				<product-filter-bar [categories$]="categories$" (handleOnFilter)="onFilterProducts($event)">
+				</product-filter-bar>
+			</div>
+			<div class="product-item" *ngFor="let product of products$ | async">
+				<product-card [product]="product" (handleAddCartItem)="onAddCartItem($event)"></product-card>
+			</div>
+			<div>
+				<p class="ion-text-center" *ngIf="!(loading$ | async) && (products$ | async).length == 0">
+					No records found!
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 pos-right-side">
+		<pos-cart-summary [cart$]="cart$" [tables$]="tables$" [loading$]="loading$" [currentTable]="currentTable" (handleChangeTable)="onChangeTable($event)" (handleRemoveItem)="onRemoveCartItem($event)"
+			(handleUpdateQuantity)="onUpdateQuantity($event)" (handleCheckout)="onCheckout($event)">
+		</pos-cart-summary>
+		<ng-container *ngIf="orderDataSource">
+			<pos-order-list [dataSource]="orderDataSource" [showFull]="true" [displayedColumns]="orderListColumns"
+				(handlePagination)="onOrderPagination($event)" (handleShowFullscreen)="onShowOrderListDialog()"
+				(handleChangeStatus)="onChangeOrderStatus($event)" (handleEdit)="onEditOrder($event)"
+				(handleRemove)="onRemoveOrder($event)">
+			</pos-order-list>
+		</ng-container>
+	</div>
+</div>

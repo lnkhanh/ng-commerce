@@ -1,0 +1,86 @@
+	<form [formGroup]="frm" (ngSubmit)="onSubmit()" class="kt-form kt-form--group-seperator-dashed">
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="First Name" autocomplete="off" formControlName="firstName" required />
+					<mat-error *ngIf="f.firstName.errors">
+						<span *ngIf="f.firstName.errors">
+							{{getErrorMessage(f.firstName)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Last Name" autocomplete="off" formControlName="lastName" required />
+					<mat-error *ngIf="f.lastName.errors">
+						<span *ngIf="f.lastName.errors">
+							{{getErrorMessage(f.lastName)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Email" autocomplete="off" formControlName="email" maxlength="255"
+						[pattern]="adminConfig.regex.email" required />
+					<mat-error *ngIf="f.email.errors">
+						<span *ngIf="f.email.errors">
+							{{getErrorMessage(f.email)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Phone" autocomplete="off" formControlName="phone" maxlength="20"
+						[mask]="adminConfig.mask.phone" required />
+					<mat-error *ngIf="f.phone.errors">
+						<span *ngIf="f.phone.errors">
+							{{getErrorMessage(f.phone)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<mat-select placeholder="Gender" formControlName="gender" required>
+						<mat-option *ngFor="let gender of genderOptions" [value]="gender.value">{{ gender.name }}</mat-option>
+					</mat-select>
+					<mat-error *ngIf="f.gender.errors">
+						<span *ngIf="f.gender.errors">
+							{{getErrorMessage(f.gender)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<textarea matInput placeholder="Address" rows="3" formControlName="address">
+								</textarea>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-checkbox formControlName="isActivate">Active</mat-checkbox>
+			</div>
+		</div>
+		<br />
+		<div class="kt-form__actions kt-form__actions--solid text-right">
+			<button type="button" mat-raised-button [disabled]="frm.pristine" (click)="onReset()">Reset</button>&nbsp;
+			<button mat-raised-button color="primary" [disabled]="frm.pristine || frm.invalid">
+				Update
+			</button>
+		</div>
+	</form>

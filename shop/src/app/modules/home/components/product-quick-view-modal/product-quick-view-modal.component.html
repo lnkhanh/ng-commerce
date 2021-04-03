@@ -1,0 +1,27 @@
+<div class="modal-body">
+  <button type="button" class="close close-btn" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div *ngIf="product" class="product-modal">
+		<div class="product-page-container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="product-details-image" [ngStyle]="{'background-image': 'url(' + product.images[0] + ')'}"></div>
+				</div>
+				<div class="col-md-4">
+					<div class="product-details-row">
+						<h1 class="product-title">{{product.name}}</h1>
+						<div class="product-category" *ngIf="category">{{category.name}}</div>
+						<div class="product-price">{{product.retailPrice | formatCurrency }}</div>
+						<div class="product-description">{{product.description}}</div>
+					</div>
+					<div class="product-details-button">
+						<quantity-control [quantity]="quantity" (onChange)="changeQuantity($event)"></quantity-control>
+						<div class="product-cart-button button button-primary button-large" (click)="addToCart()">Add to cart
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

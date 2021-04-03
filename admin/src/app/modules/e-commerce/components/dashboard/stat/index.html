@@ -1,0 +1,15 @@
+<div class="statistics" [ngStyle]="{'background-color': backgroundColor, 'border-color': borderColor}">
+  <div class="body">
+    <div class="visual">
+      <i class="fa {{ icon }}"></i>
+    </div>
+    <div class="detail">
+      <span class="value">{{ value }}</span>
+      <span class="title">{{ title }}</span>
+    </div>
+  </div>
+  <footer (click)="handleOnViewMore($event)">
+    <div class="left">View more</div>
+    <div class="right"><i class="fa fa-arrow-right"></i></div>
+  </footer>
+</div>

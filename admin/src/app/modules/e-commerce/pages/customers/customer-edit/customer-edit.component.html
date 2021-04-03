@@ -1,0 +1,48 @@
+<kt-portlet>
+	<kt-portlet-header title="Customer Details" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+		<ng-container ktPortletTools>
+			<button class="btn btn-secondary kt-margin-r-10" mat-raised-button matTooltip="Back" (click)="onBack()">
+				<i class="la la-arrow-left"></i>
+				<span class="kt-hidden-mobile">Back</span>
+			</button>
+		</ng-container>
+	</kt-portlet-header>
+
+	<kt-portlet-body>
+		<mat-tab-group [(selectedIndex)]="selectedTab" (selectedTabChange)="onTabChange($event)">
+			<mat-tab [ngClass]="{ 'actionloading': (loading$ | async) }">
+				<ng-template mat-tab-label>
+					<i class="mat-tab-label-icon fa fa-user"></i>
+					General
+				</ng-template>
+				<ng-template matTabContent>
+					<div class="row">
+						<div class="col-lg-2"></div>
+						<div class="col-lg-3">
+							<upload-avatar [user]="user$ | async" (handleUploadAvatar)="onUploadAvatar($event)"
+								(handleRemoveAvatar)="onRemoveAvatar()"></upload-avatar>
+						</div>
+						<div class="col-lg-5">
+							<kt-user-general [user$]="user$" (handleSubmit)="onGeneralFormSubmit($event)"></kt-user-general>
+						</div>
+						<div class="col-lg-2"></div>
+					</div>
+				</ng-template>
+			</mat-tab>
+			<mat-tab [ngClass]="{ 'actionloading': (loading$ | async) }">
+				<ng-template mat-tab-label>
+					<i class="mat-tab-label-icon fa fa-key"></i>
+					Change Password
+				</ng-template>
+				<ng-template matTabContent>
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<kt-change-password [user$]="user$" [loading$]="loading$"
+								(handleChangePassword)="onUserChangePassword($event)"></kt-change-password>
+						</div>
+					</div>
+				</ng-template>
+			</mat-tab>
+		</mat-tab-group>
+	</kt-portlet-body>
+</kt-portlet>

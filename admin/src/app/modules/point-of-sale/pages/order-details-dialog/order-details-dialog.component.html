@@ -1,0 +1,21 @@
+<div class="kt-portlet">
+  <h2 mat-dialog-title>
+		<status-header-order-details [order$]="order$" (handleUpdateStatus)="onUpdateStatus($event)"></status-header-order-details>
+	</h2>
+  <div mat-dialog-content>
+		<div [style.padding]="'0 16px'">
+			<div class="row">
+				<div class="col-lg-8">
+					<list-items-order-details [order$]="order$" [loading$]="loading$" (handleRemoveItem)="onRemoveOrderItem($event)"
+					(handleUpdateQuantity)="onUpdateQuantity($event)"></list-items-order-details>
+				</div>
+				<div class="col-lg-4">
+					<summary-order-details [order$]="order$"></summary-order-details>
+				</div>
+			</div>
+		</div>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+  </div>
+</div>

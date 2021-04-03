@@ -1,0 +1,30 @@
+<div class="controls">
+	<div *ngIf="quantity > 0" class="btn-change-qty {{ customCls }}" [ngClass]="{'read-only': readonly}">
+		<div class="row ion-align-items-center ion-justify-content-center">
+			<div class="col-sm-4 ion-text-center" *ngIf="readonly == false">
+				<button class="remove-btn" *ngIf="displayRemoveBtn" (click)="onRemove()" [disabled]="isLocked">
+					<span class="material-icons">
+						clear
+					</span>
+				</button>
+				<button *ngIf="!displayRemoveBtn" (click)="onDecrease()" [disabled]="isLocked">
+					<span class="material-icons">
+						remove_circle
+					</span>
+				</button>
+			</div>
+			<div class="col-sm-{{ readonly ? 12 : 4 }} qty ion-text-center">{{ quantity }}</div>
+			<div class="col-sm-4 ion-text-center" *ngIf="readonly == false">
+				<button (click)="onIncrease()" [disabled]="isLocked || disabled">
+					<span class="material-icons">
+						add_circle
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<button class="btn-round" *ngIf="quantity == 0" (click)="onAdd()" [disabled]="isLocked || disabled">
+		<span class="btn-txt">{{ addBtnTxt }}</span>
+	</button>
+</div>

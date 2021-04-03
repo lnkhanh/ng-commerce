@@ -1,0 +1,26 @@
+.order-information {
+	display: flex;
+}
+
+.label {
+	width: 150px;
+	display: inline-block;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.val {
+	font-size: 14px;
+}
+
+::ng-deep.mat-list-item-content {
+	padding: 0!important;
+}
+
+.mat-list-base .mat-list-item {
+	height: auto;
+}
+
+.mat-list {
+	width: 33%;
+}

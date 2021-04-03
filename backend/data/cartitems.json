@@ -1,0 +1,87 @@
+{ 
+    "_id" : ObjectId("5faa795654729a3b7da01fcc"), 
+    "quantity" : NumberInt(5), 
+    "user" : "5fa26814806c7193913541c1", 
+    "product" : ObjectId("5fa1341b09f16752413d87d3"), 
+    "title" : "Product 5", 
+    "image" : "", 
+    "retailPrice" : NumberInt(10000), 
+    "salePrice" : NumberInt(6000), 
+    "created" : ISODate("2020-11-10T11:28:22.746+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faa8ceb9c505a45e7db096d"), 
+    "quantity" : NumberInt(5), 
+    "user" : "5fa26814806c7193913541c1", 
+    "product" : ObjectId("5f9831c9eed9587577a74308"), 
+    "title" : "Product 2", 
+    "image" : "", 
+    "retailPrice" : NumberInt(15000), 
+    "salePrice" : NumberInt(100000), 
+    "created" : ISODate("2020-11-10T12:51:55.086+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faa8e7d722e1146e07091ce"), 
+    "quantity" : NumberInt(5), 
+    "user" : "5fa26814806c7193913541c1", 
+    "product" : ObjectId("5f9831cdeed9587577a74309"), 
+    "title" : "Product 3", 
+    "image" : "", 
+    "retailPrice" : NumberInt(15000), 
+    "salePrice" : NumberInt(100000), 
+    "created" : ISODate("2020-11-10T12:58:37.295+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faa8e88722e1146e07091cf"), 
+    "quantity" : NumberInt(4), 
+    "user" : "5fa26814806c7193913541c1", 
+    "product" : ObjectId("5f9831d2eed9587577a7430a"), 
+    "title" : "Product 4", 
+    "image" : "", 
+    "retailPrice" : NumberInt(15000), 
+    "salePrice" : NumberInt(100000), 
+    "created" : ISODate("2020-11-10T12:58:48.339+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5f8cfa0f66329577b5d7"), 
+    "quantity" : NumberInt(2), 
+    "user" : "5fac9335f169f9c861c1e1d0", 
+    "product" : ObjectId("5faf528c3b478e25dccf3450"), 
+    "title" : "Caramel Coffee Freeze", 
+    "image" : "http://api.gyment.local/api/admin/v1/assets/products/5faf528c3b478e25dccf3450/270_crop_-1605325516128.png", 
+    "retailPrice" : NumberInt(49000), 
+    "salePrice" : NumberInt(0), 
+    "categoryId" : "5faf4057d4cfea1a0d92c1d6", 
+    "created" : ISODate("2020-11-14T04:39:40.859+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5f8ffa0f66329577b5d8"), 
+    "quantity" : NumberInt(1), 
+    "user" : "5fac9335f169f9c861c1e1d0", 
+    "product" : ObjectId("5faf5d0d3a30d0302dfe17eb"), 
+    "title" : "Caramel Cheese Cake", 
+    "image" : "http://api.gyment.local/api/admin/v1/assets/products/5faf5d0d3a30d0302dfe17eb/270_crop_CARAMELPHOMAI-1605328299568.jpg", 
+    "retailPrice" : NumberInt(29000), 
+    "salePrice" : NumberInt(0), 
+    "categoryId" : "5faf442ed4cfea1a0d92c1db", 
+    "created" : ISODate("2020-11-14T04:39:43.157+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5faf5f90fa0f66329577b5d9"), 
+    "quantity" : NumberInt(5), 
+    "user" : "5fac9335f169f9c861c1e1d0", 
+    "product" : ObjectId("5faf4e453b478e25dccf3449"), 
+    "title" : "Cappuccino", 
+    "image" : "http://api.gyment.local/api/admin/v1/assets/products/5faf4e453b478e25dccf3449/270_crop_CAPPUCINO-1605324489659.png", 
+    "retailPrice" : NumberInt(54000), 
+    "salePrice" : NumberInt(0), 
+    "categoryId" : "5faf40c8d4cfea1a0d92c1d7", 
+    "created" : ISODate("2020-11-14T04:39:44.323+0000"), 
+    "__v" : NumberInt(0)
+}

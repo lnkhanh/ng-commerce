@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="row d-flex justify-content-between px-3 top">
+    <div class="d-flex">
+      <h5>
+        ORDER <span class="text-primary font-weight-bold">#{{order.code}}</span>
+        <span class="order-date">At {{order.createdDate}}</span>
+      </h5>
+    </div>
+    <div class="d-flex flex-column text-sm-right" *ngIf="order.customer as customer">
+      <p class="mb-0"><span>{{customer.firstName}} {{customer.lastName}}</span></p>
+      <p>Phone: <span class="font-weight-bold">{{customer.phone | phone}}</span></p>
+    </div>
+  </div>
+  <div class="row justify-content-between process-bar">
+    <div class="row d-flex icon-content" [ngClass]="{ selected: getOrderState('New') }"> <img class="icon" src="./assets/icons/order-processed.png">
+      <div class="d-flex flex-column">
+        <p class="font-weight-bold">Order<br>New</p>
+      </div>
+    </div>
+    <div class="row d-flex icon-content" [ngClass]="{ selected: getOrderState('Shipping') }"> <img class="icon" src="./assets/icons/order-shipped.png">
+      <div class="d-flex flex-column">
+        <p class="font-weight-bold">Order<br>En Route</p>
+      </div>
+    </div>
+    <div class="row d-flex icon-content" [ngClass]="{ selected: getOrderState('Ready') }"> <img class="icon" src="./assets/icons/order-en-route.png">
+      <div class="d-flex flex-column">
+        <p class="font-weight-bold">Order<br>Arrived</p>
+      </div>
+    </div>
+    <div class="row d-flex icon-content" [ngClass]="{ selected: getOrderState('Completed') }"> <img class="icon" src="./assets/icons/order-arrived.jpeg">
+      <div class="d-flex flex-column">
+        <p class="font-weight-bold">Order<br>Completed</p>
+      </div>
+    </div>
+  </div>
+</div>

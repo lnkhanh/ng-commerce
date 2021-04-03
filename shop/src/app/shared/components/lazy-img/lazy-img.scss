@@ -1,0 +1,22 @@
+.img-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.loading {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+  .mat-spinner {
+    margin: auto;
+  }
+}

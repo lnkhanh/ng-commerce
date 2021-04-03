@@ -1,0 +1,108 @@
+<kt-portlet>
+	<kt-portlet-header [title]="'Order List'" [class]="'kt-portlet__head--lg'" [viewLoading$]="dataSource.loading$">
+	</kt-portlet-header>
+
+	<kt-portlet-body>
+		<div class="kt-form">
+			<!-- start::FILTERS -->
+			<div class="kt-form__filtration">
+				<div class="row align-items-center">
+					<div class="col-md-2 kt-margin-bottom-10-mobile">
+						<mat-form-field class="mat-form-field-fluid">
+							<input matInput #searchInput placeholder="Search by #..." />
+							<button mat-button *ngIf="searchInput.value" matSuffix mat-icon-button aria-label="Clear"
+								(click)="searchInput.value=''; this.searchEvent();">
+								<mat-icon>close</mat-icon>
+							</button>
+						</mat-form-field>
+					</div>
+				</div>
+			</div>
+			<!-- end::FILTERS -->
+		</div>
+		<!-- end::FILTERS & GROUP ACTIONS -->
+
+		<div class="mat-table__wrapper">
+			<mat-table class="lmat-elevation-z8" #table [dataSource]="dataSource">
+
+				<ng-container matColumnDef="code">
+					<mat-header-cell *matHeaderCellDef [style.flex]="'0 0 130px'">Order #</mat-header-cell>
+					<mat-cell *matCellDef="let order" [style.flex]="'0 0 130px'">{{order.code}}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="status">
+					<mat-header-cell *matHeaderCellDef [style.flex]="'0 0 130px'">Status</mat-header-cell>
+					<mat-cell *matCellDef="let order" [style.flex]="'0 0 130px'">
+						<span class="badge {{getOrderStatusCls(order.status)}}">
+							{{ getOrderStatusName(order.status) }}
+						</span>
+					</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="customer">
+					<mat-header-cell *matHeaderCellDef>Customer</mat-header-cell>
+					<mat-cell *matCellDef="let order">
+						<ng-container *ngIf="!order.customerId">--</ng-container>
+						<ng-container *ngIf="order.customerId">
+							<a href="/ecommerce/customers/edit/{{order.customerId}}"
+								target="_blank">{{ order.customerId ? (order.firstName + ' ' + order.lastName) : '--' }}
+								<span class="material-icons">
+									open_in_new
+								</span>
+							</a>
+						</ng-container>
+					</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="name">
+					<mat-header-cell *matHeaderCellDef>Buyer Name</mat-header-cell>
+					<mat-cell *matCellDef="let order">
+						{{ order.createdBy ? (order.createdBy.firstName + ' ' + order.createdBy.lastName) : '--' }}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="phone">
+					<mat-header-cell *matHeaderCellDef [style.flex]="'0 0 130px'">Buyer Phone</mat-header-cell>
+					<mat-cell *matCellDef="let order" [style.flex]="'0 0 130px'">
+						{{ order.createdBy ? (order.createdBy.phone | phone) : '--' }}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="email">
+					<mat-header-cell *matHeaderCellDef>Buyer Email</mat-header-cell>
+					<mat-cell *matCellDef="let order">
+						{{ order.createdBy ? order.createdBy.email : '--' }}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="createdDate">
+					<mat-header-cell *matHeaderCellDef>Created Time</mat-header-cell>
+					<mat-cell *matCellDef="let order">{{ order.createdDate }}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="actions">
+					<mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+					<mat-cell *matCellDef="let order">
+						<button (click)="onViewOrder(order.id)" mat-icon-button color="primary" matTooltip="View">
+							<mat-icon>remove_red_eye</mat-icon>
+						</button>&nbsp;
+						<button [disabled]="!canArchiveOrder(order.status)" mat-icon-button color="warn" matTooltip="Archive Order"
+							type="button" (click)="onArchiveOrder(order)">
+							<mat-icon>delete</mat-icon>
+						</button>
+					</mat-cell>
+				</ng-container>
+
+				<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+				<mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+			</mat-table>
+			<div class="mat-table__message" *ngIf="!dataSource.hasItems">No records found</div>
+			<!-- Message for empty data  -->
+			<div class="mat-table__message" *ngIf="dataSource.isPreloadTextViewed$ | async">Please wait....</div>
+		</div>
+
+		<div class="mat-table__bottom">
+			<mat-spinner [diameter]="20" *ngIf="dataSource.loading$ | async"></mat-spinner>
+			<mat-paginator [pageSize]="10" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = getPaginatorData($event)"
+				[length]="dataSource.paginatorTotal$ | async" [showFirstLastButtons]="true"></mat-paginator>
+		</div>
+	</kt-portlet-body>
+</kt-portlet>

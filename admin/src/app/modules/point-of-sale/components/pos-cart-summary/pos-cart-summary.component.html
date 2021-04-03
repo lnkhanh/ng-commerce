@@ -1,0 +1,121 @@
+<div>
+    <div class="row cart-selection-container">
+        <div class="col-6 search-customer-container">
+					<ng-template #rt let-r="result" let-t="term">
+						<lazy-img [src]="r.avatar" class="mr-1" maxWidth="30" maxHeight="30"></lazy-img>
+						<ngb-highlight [result]="r.firstName + ' ' + r.lastName" [term]="t"></ngb-highlight>
+						<span class="phone">{{r.phone | phone}}</span>
+					</ng-template>
+					<input
+							id="typeahead-basic"
+							type="text"
+							class="form-control"
+							placeholder="Search customer"
+							[(ngModel)]="selectedCustomer"
+							[ngbTypeahead]="searchCustomer"
+							[resultTemplate]="rt"
+							[inputFormatter]="customerFormatter"
+                            [resultFormatter]="customerFormatter" />
+						<span *ngIf="isSelectedCustomer" class="material-icons clear-search-customer-btn" (click)="selectedCustomer = null">clear</span>
+        </div>
+        <div class="col-6">
+            <div *ngIf="(tables$ | async) as tables">
+                <mat-select [(value)]="currentTableId">
+                    <mat-option [value]="undefined">Select table</mat-option>
+                    <mat-option
+                        [value]="table.id"
+                        *ngFor="let table of tables"
+                        (click)="onChangeTable(table)">{{ table.name }}</mat-option>
+                </mat-select>
+            </div>
+        </div>
+    </div>
+    <mat-grid-list cols="10" rowHeight="35px">
+        <mat-grid-tile class="ls-header" colspan="3" rowspan="1">
+            Product
+        </mat-grid-tile>
+        <mat-grid-tile class="ls-header" colspan="2" rowspan="1">
+            Price
+        </mat-grid-tile>
+        <mat-grid-tile class="ls-header" colspan="2" rowspan="1">
+            Qty
+        </mat-grid-tile>
+        <mat-grid-tile class="ls-header" colspan="2" rowspan="1">
+            Total
+        </mat-grid-tile>
+        <mat-grid-tile class="ls-header" colspan="1" rowspan="1"></mat-grid-tile>
+
+        <ng-container *ngIf="(cart$ | async) as cart">
+            <ng-container *ngFor="let item of cart.items">
+                <mat-grid-tile colspan="3" rowspan="2" class="product-col">
+                    {{ item.title }}
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2" rowspan="1">
+                    {{ item.retailPrice | formatCurrency }}
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2" rowspan="1">
+                    <quantity-button
+                        (quantityChange)="onUpdateQuantity($event, item)"
+                        [isLocked$]="loading$"
+                        [quantity]="item.quantity"></quantity-button>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2" rowspan="1">
+                    {{ (item.retailPrice * item.quantity) | formatCurrency }}
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="1">
+                    <button class="remove-btn" (click)="onRemoveItem(item)">
+                        <span class="material-icons">
+                            clear
+                        </span>
+                    </button>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="6" rowspan="1">
+                    <span
+                        (click)="onOpenComposeItemNoteDialog(item)"
+                        [ngClass]="{ 'empty-note': !item.note }">{{ item.note ? item.note : 'Add note' }}</span>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+            </ng-container>
+        </ng-container>
+    </mat-grid-list>
+    <p *ngIf="isEmptyCart" class="cart-empty">
+        Empty cart!
+    </p>
+
+    <mat-grid-list
+        cols="10"
+        rowHeight="30px"
+        *ngIf="!isEmptyCart && (cart$ | async) as cart">
+        <mat-grid-tile colspan="5" rowspan="1"></mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="1">
+            <strong>Quantity</strong>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="1">
+            {{ cart.qty }}
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+
+        <mat-grid-tile colspan="5" rowspan="1"></mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="1">
+            <strong>Total</strong>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="1">
+            {{ cart.total | formatCurrency }}
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+
+        <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+        <mat-grid-tile colspan="8" rowspan="3">
+            <textarea class="form-control" placeholder="Note" [(ngModel)]="orderNote"></textarea>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+
+    </mat-grid-list>
+
+    <div class="checkout-container">
+        <button
+            class="btn btn-danger btn-pill"
+            (click)="onCheckout()"
+            [disabled]="isEmptyCart">Checkout</button>
+    </div>
+</div>

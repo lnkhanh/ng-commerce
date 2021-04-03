@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="settings-sidebar">
+        <div class="settings-sidebar-inner">
+          <div class="user-menu">
+            <div class="user-menu-inner has-slimscroll">
+              <div class="menu-block">
+                <ul>
+                  <li data-section="general" [routerLinkActive]="['is-active']">
+                    <a [routerLink]="['/account/profile']">
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+                        </path>
+                      </svg>
+                      <span>Profile</span>
+                    </a>
+                  </li>
+                  <li data-section="security" [routerLinkActive]="['is-active']">
+                    <a [routerLink]="['/account/order-history']">
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M13 12h7v1.5h-7zm0-2.5h7V11h-7zm0 5h7V16h-7zM21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 15h-9V6h9v13z">
+                        </path>
+                      </svg>
+                      <span>Order history</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="separator"></div>
+              <div class="menu-block">
+                <ul>
+                  <li data-section="notifications" [routerLinkActive]="['is-active']">
+                    <a [routerLink]="['/account/wishlist']">
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                        </path>
+                      </svg>
+                      <span>Wishlist</span>
+                    </a>
+                  </li>
+                  <li data-section="support" [routerLinkActive]="['is-active']">
+                    <a [routerLink]="['/account/help']">
+                      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+                        <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+                        <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
+                        <line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line>
+                        <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
+                      </svg>
+                      <span>Help</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="profile-wrapper">
+        <ng-container [ngSwitch]="selectedTabSlug">
+          <ng-container *ngSwitchCase="'profile'">
+            <ng-container *ngIf="(user$ | async) as user; else userNotFound">
+              <user-profile [user]="user" (handleUpdateAccount)="onUpdateAccount($event)"
+                (handleUploadAvatar)="onUploadAvatar($event)" (handleRemoveAvatar)="onRemoveAvatar()"></user-profile>
+            </ng-container>
+            <ng-template #userNotFound>
+              User not found!
+            </ng-template>
+          </ng-container>
+          <ng-container *ngSwitchCase="'order-history'">
+            <order-history [orders$]="orders$" [paginator$]="orderPaginator$" [loadingList$]="loading$"
+              (handlePageChange)="onOrderPageChange($event)"></order-history>
+          </ng-container>
+          <ng-container *ngSwitchCase="'order-details'">
+            <order-details [order$]="order$"></order-details>
+          </ng-container>
+          <ng-container *ngSwitchCase="'wishlist'">
+            <wishlist [wishList$]="wishList$" [paginator$]="wishListPaginator$" [loadingList$]="loading$"
+              (handlePageChange)="onWishListPageChange($event)" (handleRemoveFromWishList)="onRemoveWishList($event)"></wishlist>
+          </ng-container>
+          <ng-container *ngSwitchCase="'help'">
+            <account-help></account-help>
+          </ng-container>
+          <ng-container *ngSwitchDefault>Page not found!</ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

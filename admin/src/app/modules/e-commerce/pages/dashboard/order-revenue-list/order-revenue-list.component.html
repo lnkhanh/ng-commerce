@@ -1,0 +1,75 @@
+<div class="row mt-5">
+  <div class="col">
+    <h4>Orders Revenue Details</h4>
+  </div>
+</div>
+<div class="order-revenue-detail-table" [ngClass]="{'actionloading': loading}">
+  <div class="mat-table__wrapper">
+    <mat-table class="lmat-elevation-z8" #table [dataSource]="data">
+      <ng-container matColumnDef="orderId">
+        <mat-header-cell *matHeaderCellDef> Order Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.OrderId || '--' }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="orderDate">
+        <mat-header-cell *matHeaderCellDef> Order Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.OrderDate | shortDatetime }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="soldTo">
+        <mat-header-cell *matHeaderCellDef> Sold To </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.SoldTo || '--' }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <span class="status"
+            [ngClass]="{
+              'canceled': element.Status === orderStatus.cancelled,
+              'pending': element.Status === orderStatus.confirmed || element.Status === orderStatus.inprogress,
+              'complete': element.Status === orderStatus.completed,
+              'shipped': element.Status === orderStatus.shipped}">
+            {{ element.Status || '--' }}
+          </span>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="merchTotal">
+        <mat-header-cell *matHeaderCellDef> Merch Total </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.Subtotal ? (element.Subtotal | currency) : '--' }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="salesTax">
+        <mat-header-cell *matHeaderCellDef> Sales Tax </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.SalesTax ? (element.SalesTax | currency) : '--' }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="freight">
+        <mat-header-cell *matHeaderCellDef> Freight </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.Freight ? (element.Freight | currency) : '--' }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="orderTotal">
+        <mat-header-cell *matHeaderCellDef> Order Total </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.OrderTotal ? (element.OrderTotal | currency) : '--' }} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <div class="mat-table__message" *ngIf="(!data || !data.length) && !loading">No records found</div>
+    <div class="mat-table__message" *ngIf="loading">Please wait....</div>
+  </div>
+  <div class="mat-table__bottom">
+    <mat-paginator
+      [length]="paginator.totalRecord"
+      [pageSize]="paginator.pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      [showFirstLastButtons]="true"
+      [disabled]="loading"
+      (page)="onChangePage($event)"
+    >
+    </mat-paginator>
+  </div>
+</div>

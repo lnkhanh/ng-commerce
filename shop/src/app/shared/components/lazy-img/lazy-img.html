@@ -1,0 +1,24 @@
+<div class="img-container" [ngStyle]="{ 'max-width.px': maxWidth, 'max-height.px': maxHeight }"  >
+  <img [defaultImage]="default" [lazyLoad]="src" />
+  <!-- <img
+    *ngIf="!error"
+    [hidden]="!loaded"
+    [src]="src"
+    [ngStyle]="{'max-height.px': maxHeight}"
+    [alt]="alt"
+    loading="lazy"
+    (load)="onLoad()"
+    (error)="onError()"
+  />
+  <img
+    *ngIf="default && (error || !loaded) && !(loading | async)"
+    [src]="default"
+    [ngStyle]="{'max-height.px': maxHeight}"
+    [alt]="alt"
+    loading="lazy"
+  /> -->
+
+</div>
+<!-- <div class="loading" *ngIf="(loading | async)" [ngStyle]="{ 'width.px': maxWidth, 'height.px': maxHeight }">
+  <spinner></spinner>
+</div> -->

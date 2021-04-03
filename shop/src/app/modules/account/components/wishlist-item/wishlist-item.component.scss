@@ -1,0 +1,53 @@
+.item-container {
+	background-color: rgb(255, 255, 255);
+	margin-bottom: 2px;
+	border-radius: 2px;
+	padding: 20px 70px 20px 15px;
+	display: flex;
+	position: relative;
+
+	lazy-img {
+		float: left;
+		margin: 0 15px 0 0;
+	}
+
+	.body {
+		flex: 1 1 0%;
+
+		.name {
+			font-size: 14px;
+			margin: 0px 0px 15px;
+			line-height: 20px;
+			font-weight: 400;
+			display: block;
+		}
+	}
+
+	.footer {
+		width: 100px;
+		margin-left: 25px;
+		text-align: right;
+
+		.price {
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 500;
+			margin: 0px 0px 8px;
+		}
+	}
+
+	.delete-btn {
+		width: 40px;
+    height: 40px;
+    padding: 0px;
+    background: 0px center;
+    color: rgb(153, 153, 153);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: 0px;
+    font-size: 20px;
+    box-shadow: none;
+    cursor: pointer;
+	}
+}

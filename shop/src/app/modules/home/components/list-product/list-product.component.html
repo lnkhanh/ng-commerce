@@ -1,0 +1,18 @@
+<h1>The Secret to Making Life Better</h1>
+<div class="row" *ngIf="(products$ | async) as products">
+    <div class="col-6 col-md-3" *ngFor="let product of products">
+        <product-item
+            [product]="product"
+            (handleAddToCart)="onAddToCart(product)"
+            (handleAddToWishList)="onAddToWishList(product)"
+            (handleOpenProductQuickViewModal)="onOpenProductQuickViewModal($event)"></product-item>
+    </div>
+    <div *ngIf="products && !products.length" style="margin: auto">
+        <p>No products found!</p>
+    </div>
+</div>
+<paginator
+    [paginator$]="paginator$"
+    [pageSizeOptions]="pageSizeOptions"
+    [loading$]="loadingList$"
+    (doChange)="handleOnChangePaging($event)"></paginator>

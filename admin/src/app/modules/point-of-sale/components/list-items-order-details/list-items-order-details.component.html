@@ -1,0 +1,40 @@
+<mat-grid-list cols="10" rowHeight="35px">
+	<mat-grid-tile class="ls-header" colspan="3" rowspan="1"> Product </mat-grid-tile>
+	<mat-grid-tile class="ls-header" colspan="2" rowspan="1"> Price </mat-grid-tile>
+	<mat-grid-tile class="ls-header" colspan="2" rowspan="1"> Qty </mat-grid-tile>
+	<mat-grid-tile class="ls-header" colspan="2" rowspan="1"> Total </mat-grid-tile>
+	<mat-grid-tile class="ls-header" colspan="1" rowspan="1"></mat-grid-tile>
+
+	<ng-container *ngIf="(order$ | async) as order">
+		<ng-container *ngFor="let item of order.products">
+			<mat-grid-tile colspan="3" rowspan="2" class="product-col"> 
+				{{ item.title }}
+			</mat-grid-tile>
+			<mat-grid-tile colspan="2" rowspan="1"> 
+				{{ item.retailPrice | formatCurrency }}	
+			</mat-grid-tile>
+			<mat-grid-tile colspan="2" rowspan="1"> 
+				<quantity-button (quantityChange)="onUpdateQuantity($event, item)" [isLocked$]="loading$"
+					[quantity]="item.quantity">
+				</quantity-button>
+			</mat-grid-tile>
+			<mat-grid-tile colspan="2" rowspan="1"> 
+				{{ (item.retailPrice * item.quantity) | formatCurrency }}
+			</mat-grid-tile>
+			<mat-grid-tile colspan="1" rowspan="1">
+				<button class="remove-btn" (click)="onRemoveItem(item)">
+					<span class="material-icons">
+						clear
+					</span>
+				</button>
+			</mat-grid-tile>
+			<mat-grid-tile colspan="6" rowspan="1">
+				<span (click)="onOpenComposeItemNoteDialog(item)" [ngClass]="{ 'empty-note': !item.note }">{{ item.note ? item.note : 'Add note' }}</span>
+			</mat-grid-tile>
+			<mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>	
+		</ng-container>
+	</ng-container>
+</mat-grid-list>
+<p *ngIf="isEmptyOrder" class="cart-empty">
+	Empty cart!
+</p>

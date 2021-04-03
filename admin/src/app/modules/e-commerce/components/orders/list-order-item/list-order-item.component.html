@@ -1,0 +1,31 @@
+<table class="table table-striped" aria-label="">
+  <thead>
+  <tr>
+		<th scope="col" style="width: 40px">#</th>
+		<th scope="col" style="width: 55px"></th>
+    <th scope="col">Product Name</th>
+    <th scope="col">Note</th>
+    <th scope="col" style="width: 80px">Price</th>
+    <th scope="col" style="width: 80px">Quantity</th>
+    <th scope="col" style="width: 80px">Total</th>
+  </tr>
+  </thead>
+  <tbody>
+		<ng-container *ngIf="(order$ | async) as order">
+			<tr *ngFor="let item of order.products; index as i">
+				<th scope="row">{{ i + 1 }}</th>
+				<td>
+					<lazy-img [src]="item.image" maxWidth="50" maxHeight="50"></lazy-img>
+				</td>
+				<td>{{ item.title }}</td>
+				<td>{{ item.note || '--' }}</td>
+				<td class="text-right">{{ item.retailPrice | formatCurrency }}</td>
+				<td class="text-right">{{ item.quantity }}</td>
+				<td class="text-right">{{ (item.retailPrice * item.quantity) | formatCurrency }}</td>
+			</tr>
+		</ng-container>
+	</tbody>
+</table>
+<p *ngIf="isEmptyOrder" class="order-empty">
+	Empty order!
+</p>

@@ -1,0 +1,21 @@
+<div class="filter-container">
+	<div class="row">
+		<div class="col-md-9 text-left" *ngIf="(categories$ | async) as categories">
+			<button (click)="onSelectFilter(null)" [ngClass]="{ selected: filter.catIds.length == 0 }">All</button>
+			<button *ngFor="let cat of categories" (click)="onSelectFilter(cat.id)"
+				[ngClass]="{ selected: findSelected(cat.id) }">
+				{{ cat.name }}
+			</button>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+				<div class="input-icon input-icon-right">
+					<input #searchInput type="text" class="form-control" placeholder="Search..." />
+					<span (click)="onClearKeyword()">
+						<i class="{{ !filter.keyword ? 'flaticon2-search-1' : 'flaticon2-cancel' }} icon-md"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Sale price</th>
+      <th>Sub Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of order.products">
+      <td>
+        <div class="product-item">
+					<lazy-img [src]="product.image"></lazy-img>
+          <div class="product-info">
+						<a class="product-name"
+              href="/product/slug">{{ product.title }}</a>
+          </div>
+        </div>
+      </td>
+      <td class="price">{{ product.retailPrice | formatCurrency }}</td>
+      <td class="quantity">{{ product.quantity }}</td>
+      <td class="discount-amount">{{ product.salePrice | formatCurrency }}</td>
+      <td class="raw-total">{{ ((product.salePrice || product.retailPrice) * product.quantity) | formatCurrency }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4"><span>Total</span></td>
+      <td><span class="sum">{{ order.total | formatCurrency }}</span></td>
+    </tr>
+  </tfoot>
+</table>
+<a class="view-list-order" routerLink="/account/order-history">&lt;&lt; Back to Order History</a>

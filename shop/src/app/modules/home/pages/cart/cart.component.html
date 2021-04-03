@@ -1,0 +1,67 @@
+<div class="cart-page-container">
+  <div class="cart-page-header">
+    <h1>Shopping Cart</h1>
+  </div>
+  <div class="cart-page-content" *ngIf="(cart$ | async) as cart; else cartEmpty">
+    <div class="cart-item-header cart-item-row">
+      <div class="cart-item-cell cart-item-product"><span>Product</span></div>
+      <div class="cart-item-cell cart-item-quantity"><span>Quantity</span></div>
+      <div class="cart-item-cell cart-item-total"><span>Total</span></div>
+      <div class="cart-item-cell cart-item-action"><span>Action</span></div>
+    </div>
+    <div class="cart-item-row" *ngFor="let item of cart.items;let i = index">
+      <div class="cart-item-cell cart-item-product">
+        <div class="cart-item-thumbnail">
+          <lazy-img [src]="item.image"></lazy-img>
+        </div>
+        <div class="cart-item-info">
+          <div class="cart-item-title">{{item.title}}</div>
+          <div class="cart-item-price">{{item.retailPrice | formatCurrency}}</div>
+          <div class="cart-item-note">
+				    <a (click)="onOpenNoteModal(item)" [ngClass]="{ 'btn-link': !item.note }">{{item.note || 'Add note'}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="cart-item-cell cart-item-quantity">
+        <quantity-control [quantity]="item.quantity" (onChange)="onChangeQuantity(item, $event)"></quantity-control>
+      </div>
+      <div class="cart-item-cell cart-item-total">
+        <div class="item-price">
+          {{(item.retailPrice*item.quantity) | formatCurrency }}
+        </div>
+      </div>
+      <div class="cart-item-cell cart-item-action">
+        <div class="item-remove" (click)="onRemoveFromCart(item)">X</div>
+      </div>
+    </div>
+    <div class="row cart-total">
+      <div class="col-md-6"></div>
+      <div class="col-md-6">
+        <div class="cart-total-row row">
+          <div class="col-md-6 cart-total-label">
+            Cart overview
+          </div>
+          <div class="col-md-6 cart-total-value"></div>
+        </div>
+        <div class="cart-total-row row">
+          <div class="col-md-6 cart-total-label">
+            total
+          </div>
+          <div class="col-md-6 cart-total-value">
+            {{cart.total | formatCurrency}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-buttons">
+      <div class="continue-shopping"><a routerLink="/">continue shopping</a></div>
+      <a routerLink="/checkout" class="checkout-button button button-primary button-large">Checkout ({{cart.total | formatCurrency}})</a>
+    </div>
+  </div>
+  <ng-template #cartEmpty>
+    <div class="cart-page-content">
+      <h4>Your cart is empty.</h4>
+      <a routerLink="/">Go shopping</a>
+    </div>
+  </ng-template>
+</div>

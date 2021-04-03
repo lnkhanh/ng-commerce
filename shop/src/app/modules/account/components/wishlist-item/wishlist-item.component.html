@@ -1,0 +1,19 @@
+<div class="item-container" *ngIf="item">
+  <lazy-img [src]="item.images[0]" [maxWidth]="100" [maxHeight]="100"></lazy-img>
+	<div class="body">
+		<h3 class="name">
+			<a class="product-name" href="/product/{{item.slug}}">{{ item.name }}</a>
+		</h3>
+		<p>
+			{{ item.description }}
+		</p>
+	</div>
+	<div class="footer">
+		<div class="price">
+			{{ item.retailPrice | formatCurrency }}
+		</div>
+	</div>
+	<button class="delete-btn" (click)="onRemoveWishList()">
+		<i class="fa fa-times" aria-hidden="true"></i>
+	</button>
+</div>

@@ -1,0 +1,66 @@
+<div [ngClass]="{ 'actionloading': (loading$ | async) }">
+	<form [formGroup]="frm" (ngSubmit)="onSubmit()">
+		<div class="modal-header">
+			<h4 class="modal-title">New Option Set</h4>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-lg-12">
+					<mat-form-field class="mat-form-field-fluid">
+						<input matInput placeholder="Name" autocomplete="off" formControlName="name"
+							(change)="handleOnChangeName($event)" required />
+						<mat-error *ngIf="f.name.errors">
+							<span *ngIf="f.name.errors">
+								{{getErrorMessage(f.name)}}
+							</span>
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<mat-form-field class="mat-form-field-fluid">
+						<input matInput placeholder="Display Name" formControlName="displayName" required />
+						<mat-error *ngIf="f.displayName.errors">
+							<span *ngIf="f.displayName.errors">
+								{{getErrorMessage(f.displayName)}}
+							</span>
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<mat-form-field class="mat-form-field-fluid">
+						<mat-select placeholder="Display Control Type" formControlName="displayControlType" required>
+							<mat-option *ngFor="let control of optionSetControlTypes" [value]="control.val">
+								{{control.name}}
+							</mat-option>
+						</mat-select>
+						<mat-error *ngIf="f.displayControlType.errors">
+							<span *ngIf="f.displayControlType.errors">
+								{{getErrorMessage(f.displayControlType)}}
+							</span>
+						</mat-error>
+					</mat-form-field>
+				</div>
+				<div class="col-lg-6">
+					<mat-form-field class="mat-form-field-fluid">
+						<input matInput type="number" placeholder="Display Order" formControlName="displayOrder" />
+						<mat-error *ngIf="f.displayOrder.errors">
+							<span *ngIf="f.displayOrder.errors">
+								{{getErrorMessage(f.displayOrder)}}
+							</span>
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" mat-raised-button mat-dialog-close [disabled]="formSubmitting">Close</button>&nbsp;
+				<button mat-raised-button color="primary" [disabled]="frm.pristine || formSubmitting || frm.invalid">
+					Submit
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

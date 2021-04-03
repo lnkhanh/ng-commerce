@@ -1,0 +1,62 @@
+.btn-change-qty {
+	display: inline-block;
+	padding: 0px 6px;
+	width: auto;
+	font-size: 15px;
+	height: 32px;
+	min-width: 70px;
+	&.read-only {
+		min-width: unset;
+	}
+	button {
+		outline: none!important;
+		border: 0;
+		background: none;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		color: #0BB783;
+		cursor: pointer;
+
+		&.remove-btn {
+			color: #da2128;
+		}
+
+		&[disabled] {
+			color: #808080;
+		}
+	}
+
+	ion-icon {
+		font-size: 15px;
+	}
+}
+@media (max-width: 374px) {
+	.btn-change-qty ion-col {
+		// margin: 0 0px;
+	}
+}
+@media (min-width: 375px) {
+	.btn-change-qty ion-col {
+		// padding: 0 2px;
+	}
+}
+.btn-change-qty.small {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	padding: 2px 3px 2px;
+	border-width: 1px;
+	height: 24px;
+}
+.btn-change-qty.gift-card {
+	color: blue;
+	border-radius: 0;
+	border: none;
+	border-bottom: 2px solid red;
+	&.ready-only {
+		border: none;
+	}
+	ion-icon {
+		color: blue;
+	}
+}

@@ -1,0 +1,9 @@
+{ 
+    "_id" : ObjectId("5f8bfa8d694bab5bea6c9b31"), 
+    "modifiedAt" : null, 
+    "name" : "Test Company", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f8add0a974aba3f611f3f8e"), 
+    "createdAt" : ISODate("2020-10-18T08:19:25.354+0000"), 
+    "__v" : NumberInt(0)
+}

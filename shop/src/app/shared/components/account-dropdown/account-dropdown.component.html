@@ -1,0 +1,54 @@
+<div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret is-opened">
+	<div class="user-image" (click)="onToggleMenu()">
+		<ng-container *ngIf="user.avatar; else generatedAvatar">
+			<lazy-img [src]="user.avatar"></lazy-img>
+		</ng-container>
+		<ng-template #generatedAvatar>
+			<span class="generated-avatar" [ngStyle]="{background: badgeBg}">
+				<strong>{{((user.firstName || 'Un') + ' ' + (user.lastName || 'know')) | firstLetter}}</strong>
+			</span>
+		</ng-template>
+	</div>
+
+	<div class="nav-drop is-account-dropdown" [ngClass]="{'is-active': (isOpened$ | async)}">
+			<div class="inner">
+				<div class="nav-drop-header">
+					<span class="username">Hi! {{ user.firstName }} {{ user.lastName }}</span>
+					</div>
+					<div class="nav-drop-body account-items">
+							<a routerLink="/account/profile" class="account-item">
+									<div class="media">
+											<div class="icon-wrap">
+													<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+											</div>
+											<div class="media-content">
+													<h3>Account</h3>
+													<small>Modify your profile.</small>
+											</div>
+									</div>
+							</a>
+							<a routerLink="/account/order-history" class="account-item">
+									<div class="media">
+											<div class="icon-wrap">
+													<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+												</div>
+											<div class="media-content">
+													<h3>Order History</h3>
+													<small>View all your orders.</small>
+											</div>
+									</div>
+							</a>
+							<a class="account-item" (click)="onLogout()">
+									<div class="media">
+											<div class="icon-wrap">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+											</div>
+											<div class="media-content">
+													<h3>Log out</h3>
+											</div>
+									</div>
+							</a>
+					</div>
+			</div>
+	</div>
+</div>

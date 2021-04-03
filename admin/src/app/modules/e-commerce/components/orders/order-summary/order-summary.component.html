@@ -1,0 +1,54 @@
+<div class="order-information" *ngIf="order">
+    <!-- General -->
+    <mat-list role="list">
+        <mat-list-item role="listitem">
+            <span class="label">Order Status</span>
+            <span class="val">
+                <select id="stt" class="form-control form-control-sm" name="status" [(ngModel)]="order.status" (change)="onChangeStatus($event.target.value)">
+                    <option [value]="stt.val" *ngFor="let stt of orderStatues">{{ stt.name }}</option>
+                </select>
+            </span>
+        </mat-list-item>
+        <mat-list-item>
+            <span class="label">Order At</span>
+            <span class="val">{{order.createdDate}}</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span class="label">Address</span>
+            <span class="val">{{order.address}}</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span class="label">Note</span>
+            <span class="val">{{order.note || '--'}}</span>
+        </mat-list-item>
+    </mat-list>
+    <!-- Customer -->
+    <ng-container *ngIf="order.user as user">
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <span class="label">Name</span>
+                <span class="val">{{user.firstName}}
+                    {{user.lastName}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span class="label">Email</span>
+                <span class="val">{{user.email}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span class="label">Phone</span>
+                <span class="val">{{user.phone | phone}}</span>
+            </mat-list-item>
+        </mat-list>
+    </ng-container>
+    <!-- Order summary -->
+    <mat-list role="list">
+        <mat-list-item role="listitem">
+            <span class="label">Quantity</span>
+            <span class="val">{{order.qty}}</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span class="label">Total</span>
+            <span class="val">{{order.total | formatCurrency}}</span>
+        </mat-list-item>
+    </mat-list>
+</div>

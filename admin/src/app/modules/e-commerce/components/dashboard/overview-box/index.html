@@ -1,0 +1,44 @@
+<div class="dashboard-overview">
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
+      <dashboard-statistics
+        [icon]="'fa-briefcase fa-icon-medium'"
+        [value]="(totalSales || 0) | formatCurrency"
+        [title]="'Total Sales'"
+        [backgroundColor]="'rgba(255, 184, 34, 0.8)'"
+        [borderColor]="'rgba(255, 184, 34, 0.2)'"
+        (onViewMore)="handleOnViewMore(tabName.sale)"
+      ></dashboard-statistics>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <dashboard-statistics
+        [icon]="'fa-shopping-cart'"
+        [value]="(totalOrders || 0) | number"
+        [title]="'Total Orders'"
+        [backgroundColor]="'rgba(23, 162, 184, .8)'"
+        [borderColor]="'rgba(23, 162, 184, .2)'"
+        (onViewMore)="handleOnViewMore(tabName.order)"
+      ></dashboard-statistics>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <dashboard-statistics
+        [icon]="'fa-user fa-icon-medium'"
+        [value]="(totalSales && totalOrders ? totalSales / totalOrders : 0) | formatCurrency"
+        [title]="'Average Orders'"
+        [backgroundColor]="'rgba(40, 167, 84, .8)'"
+        [borderColor]="'rgba(40, 167, 84, .2)'"
+        (onViewMore)="handleOnViewMore(tabName.order)"
+      ></dashboard-statistics>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <dashboard-statistics
+        [icon]="'fa-users'"
+        [value]="users | number"
+        [title]="'Users'"
+        [backgroundColor]="'rgba(253, 126, 20, .8)'"
+        [borderColor]="'rgba(253, 126, 20, .2)'"
+        (onViewMore)="handleOnViewMore(tabName.order)"
+      ></dashboard-statistics>
+    </div>
+  </div>
+</div>

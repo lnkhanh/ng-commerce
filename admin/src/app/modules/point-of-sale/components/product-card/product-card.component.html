@@ -1,0 +1,4 @@
+<div class="product-card" *ngIf="product" (click)="onAddCartItem()">
+	<lazy-img class="photo" [src]="product.images[0]"></lazy-img>
+	<h1>{{ product.name }}</h1>
+</div>

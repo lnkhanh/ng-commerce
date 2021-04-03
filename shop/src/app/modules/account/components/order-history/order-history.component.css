@@ -1,0 +1,44 @@
+:host {
+	background-color: #fff;
+	display: block;
+}
+
+.column1 {
+  width: 60px;
+  padding-left: 40px;
+}
+
+.column2 {
+  width: 160px;
+}
+
+.column3 {
+  text-align: center;
+}
+
+.column4 {
+  width: 150px;
+}
+
+.column5 {
+
+  text-align: right;
+  width: 75px;
+}
+
+.column6 {
+  width: 150px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+@media screen and (max-width: 992px) {
+  .column4,
+  .column5,
+  .column6,
+  .column1,
+  .column2,
+  .column3 {
+    width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+<kt-portlet>
+	<kt-portlet-header [title]="title" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+		<ng-container ktPortletTools>
+			<button class="btn btn-secondary kt-margin-r-10" mat-raised-button matTooltip="Back" (click)="onBack()">
+				<i class="la la-arrow-left"></i>
+				<span class="kt-hidden-mobile">Back</span>
+			</button>
+		</ng-container>
+	</kt-portlet-header>
+
+	<kt-portlet-body>
+		<order-summary [order$]="order$" [loading$]="loading$" (handleUpdateOrderStatus)="onUpdateOrderStatus($event)"></order-summary>
+		<list-order-item [order$]="order$" [loading$]="loading$"></list-order-item>
+	</kt-portlet-body>
+</kt-portlet>

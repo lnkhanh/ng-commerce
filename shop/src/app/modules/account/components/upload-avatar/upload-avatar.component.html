@@ -1,0 +1,16 @@
+<form enctype="multipart/form-data" autocomplete="off" #modelForm="ngForm">
+	<div class="upload-container">
+		<div class="upload-template" DXPDragDropUpload style="height: 200px;" (click)="fileInput.click()"
+			(onFileDropped)="uploadFile($event)">
+			<div class="preview">
+				<lazy-img class="avatar" maxHeight="200" maxWidth="200" [src]="user.avatar"></lazy-img>
+			</div>
+			<input hidden type="file" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/svg+xml" #fileInput
+				(change)="uploadFile($event.target.files)">
+		</div>
+		<p class="note">Select or drag/drop an image to upload avatar.</p>
+	</div>
+	<button *ngIf="user && user.avatar" class="btn-close" matTooltip="Remove avatar" (click)="onRemoveAvatar()">
+		<i class="fa fa-times" aria-hidden="true"></i>
+	</button>
+</form>

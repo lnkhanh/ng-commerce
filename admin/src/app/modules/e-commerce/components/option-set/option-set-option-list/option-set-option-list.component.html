@@ -1,0 +1,13 @@
+<h5>Options</h5>
+<div cdkDropList class="option-list" (cdkDropListDropped)="onDropped($event)">
+<div class="option-box" *ngFor="let opt of displayOptions; let idx = index" cdkDrag>
+	<div class="option-placeholder" *cdkDragPlaceholder></div>
+	<div>
+		<span>Name: {{ opt.name }}</span><br />
+		<span>Display Name: {{ opt.displayName }}</span>
+	</div>
+	<span class="valuer">{{ (opt.value || 0) | formatCurrency }}</span>
+	<span class="display-order">{{ displayOptions.length - idx  }}</span>
+	<mat-icon class="remove-btn" (click)="onRemove(idx)">close</mat-icon>
+</div>
+</div>

@@ -1,0 +1,83 @@
+<kt-portlet>
+	<kt-portlet-header [title]="'Category List'" [class]="'kt-portlet__head--lg'" [viewLoading$]="dataSource.loading$">
+		<ng-container ktPortletTools>
+			<button (click)="onOpenNewCategoryDialog()" mat-raised-button color="primary"
+				matTooltip="Add new Category">
+				<span class="la la-plus"></span>
+				Add Category
+			</button>
+		</ng-container>
+	</kt-portlet-header>
+
+	<kt-portlet-body>
+		<div class="kt-form">
+			<!-- start::FILTERS -->
+			<div class="kt-form__filtration">
+				<div class="row align-items-center">
+					<div class="col-md-2 kt-margin-bottom-10-mobile">
+						<mat-form-field class="mat-form-field-fluid">
+							<input matInput #searchInput placeholder="Search..." />
+							<button mat-button *ngIf="searchInput.value" matSuffix mat-icon-button aria-label="Clear"
+								(click)="searchInput.value=''; this.searchEvent();">
+								<mat-icon>close</mat-icon>
+							</button>
+						</mat-form-field>
+					</div>
+				</div>
+			</div>
+			<!-- end::FILTERS -->
+		</div>
+		<!-- end::FILTERS & GROUP ACTIONS -->
+
+		<div class="mat-table__wrapper">
+			<mat-table class="lmat-elevation-z8" #table [dataSource]="dataSource">
+
+				<ng-container matColumnDef="name">
+					<mat-header-cell *matHeaderCellDef>Category Name</mat-header-cell>
+					<mat-cell *matCellDef="let category">{{category.name}}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="slug">
+					<mat-header-cell *matHeaderCellDef>Slug</mat-header-cell>
+					<mat-cell *matCellDef="let category">{{category.slug || '--'}}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="createdAt">
+					<mat-header-cell *matHeaderCellDef>Created At</mat-header-cell>
+					<mat-cell *matCellDef="let category">{{(category.createdAt | fullDatetime) || '--'}}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="modifiedAt">
+					<mat-header-cell *matHeaderCellDef>Modified At</mat-header-cell>
+					<mat-cell *matCellDef="let category">{{(category.modifiedAt | fullDatetime) || '--'}}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="actions">
+					<mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+					<mat-cell *matCellDef="let category">
+						<button (click)="onEditCategory(category.id)" mat-icon-button color="primary" matTooltip="Edit">
+							<mat-icon>create</mat-icon>
+						</button>&nbsp;
+						<button mat-icon-button color="warn" matTooltip="Remove category" type="button"
+							(click)="onDeleteCategory(category)">
+							<mat-icon>delete</mat-icon>
+						</button>
+					</mat-cell>
+				</ng-container>
+
+				<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+				<mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+			</mat-table>
+			<div class="mat-table__message" *ngIf="!dataSource.hasItems">No records found</div>
+			<!-- Message for empty data  -->
+			<div class="mat-table__message" *ngIf="dataSource.isPreloadTextViewed$ | async">Please wait....</div>
+		</div>
+
+		<div class="mat-table__bottom">
+			<mat-spinner [diameter]="20" *ngIf="dataSource.loading$ | async"></mat-spinner>
+			<mat-paginator [pageSize]="10" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = getPaginatorData($event)"
+				[length]="dataSource.paginatorTotal$ | async" [showFirstLastButtons]="true"></mat-paginator>
+		</div>
+	</kt-portlet-body>
+</kt-portlet>

@@ -1,0 +1,86 @@
+	<form [formGroup]="frm" (ngSubmit)="onSubmit()" class="kt-form kt-form--group-seperator-dashed">
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Product name" autocomplete="off" formControlName="name" required />
+					<mat-error *ngIf="f.name.errors">
+						<span *ngIf="f.name.errors">
+							{{getErrorMessage(f.name)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Price" autocomplete="off" formControlName="retailPrice" required />
+					<mat-error *ngIf="f.retailPrice.errors">
+						<span *ngIf="f.retailPrice.errors">
+							{{getErrorMessage(f.retailPrice)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Sale price" autocomplete="off" formControlName="salePrice" />
+					<mat-error *ngIf="f.salePrice.errors">
+						<span *ngIf="f.salePrice.errors">
+							{{getErrorMessage(f.salePrice)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<!-- <div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<mat-select placeholder="Store" formControlName="storeId">
+						<mat-option value="">None</mat-option>
+						<mat-option *ngFor="let store of stores$ | async" [value]="store.id">{{ store.name }}</mat-option>
+					</mat-select>
+					<mat-error *ngIf="f.storeId.errors">
+						<span *ngIf="f.storeId.errors">
+							{{getErrorMessage(f.storeId)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div> -->
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<mat-select placeholder="Category" formControlName="categoryId" required>
+						<mat-option *ngFor="let category of categories$ | async" [value]="category.id">{{ category.name }}</mat-option>
+					</mat-select>
+					<mat-error *ngIf="f.categoryId.errors">
+						<span *ngIf="f.categoryId.errors">
+							{{getErrorMessage(f.categoryId)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<mat-form-field class="mat-form-field-fluid">
+					<textarea matInput placeholder="Description" formControlName="description"></textarea>
+					<mat-error *ngIf="f.description.errors">
+						<span *ngIf="f.description.errors">
+							{{getErrorMessage(f.description)}}
+						</span>
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<br />
+		<div class="kt-form__actions kt-form__actions--solid text-right">
+			<button type="button" mat-raised-button [disabled]="frm.pristine" (click)="onReset()">Reset</button>&nbsp;
+			<button mat-raised-button color="primary" [disabled]="frm.pristine || frm.invalid">
+				Update
+			</button>
+		</div>
+	</form>

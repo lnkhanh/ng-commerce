@@ -1,0 +1,74 @@
+<form class="form-inline row px-4" enctype="multipart/form-data" autocomplete="off" #modelForm="ngForm">
+  <div class="form-group hidden">
+    <div class="input-group">
+      <input name="datepicker"
+             class="form-control"
+             ngbDatepicker
+             #datepicker="ngbDatepicker"
+             [autoClose]="'outside'"
+             (dateSelect)="onDateSelection($event)"
+             [displayMonths]="2"
+             [dayTemplate]="t"
+             placement='left'
+             outsideDays="hidden">
+      <ng-template #t let-date let-focused="focused">
+        <span class="custom-day"
+              [class.focused]="focused"
+              [class.range]="isRange(date)"
+              [class.faded]="isHovered(date) || isInside(date)"
+              (mouseenter)="hoveredDate = date"
+              (mouseleave)="hoveredDate = null">
+          {{ date.day }}
+        </span>
+      </ng-template>
+    </div>
+  </div>
+  <div class="col-6">
+    <mat-form-field class="mat-form-field-fluid">
+      <mat-label>From Date</mat-label>
+      <input #dpFromDate matInput
+        placeholder="mm/dd/yyyy"
+        name="dpFromDate"
+        required
+        [mask]="adminConfig.mask.date" [dropSpecialCharacters]="false"
+        [showMaskTyped]="false" [validation]="true"
+        [value]="formatter.format(fromDate)"
+        (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+        (change)="handleDateOnChange()"
+        >
+        <button mat-icon-button matSuffix (click)="datepicker.toggle()" type="button">
+          <mat-icon>date_range</mat-icon>
+        </button>
+    </mat-form-field>
+  </div>
+  <div class="col-6">
+    <mat-form-field class="mat-form-field-fluid">
+      <mat-label>To Date</mat-label>
+      <input #dpToDate matInput
+          placeholder="mm/dd/yyyy"
+          name="dpToDate"
+          required
+          [mask]="adminConfig.mask.date" [dropSpecialCharacters]="false"
+          [showMaskTyped]="false" [validation]="true"
+          [value]="formatter.format(toDate)"
+          (input)="toDate = validateInput(toDate, dpToDate.value)"
+          (change)="handleDateOnChange()">
+        <button mat-icon-button matSuffix (click)="datepicker.toggle()" type="button">
+          <mat-icon>date_range</mat-icon>
+        </button>
+    </mat-form-field>
+  </div>
+</form>
+<div class="row">
+  <div class="col text-center">
+    <button type="button" mat-raised-button
+      (click)="handleOnCancel()">
+      Cancel
+    </button>
+    <button type="button" mat-raised-button color="primary" class="ml-3"
+      [disabled]="!isDateValid"
+      (click)="handleOnApply()">
+      Apply
+    </button>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<form [formGroup]="frm" (ngSubmit)="onSubmit()">
+  <div class="modal-header">
+    <h5 class="modal-title">Note for {{ data && data.title }}</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <textarea class="form-control" placeholder="Enter a note..." formControlName="note"></textarea>
+    <div *ngIf="f.note.errors">
+      <span *ngIf="f.note.errors">
+        {{getErrorMessage(f.note)}}
+      </span>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" [disabled]="formSubmitting"
+      (click)="activeModal.close('Close click')">Close</button>&nbsp;
+    <button class="btn btn-primary" [disabled]="frm.pristine || formSubmitting || frm.invalid">Submit</button>
+  </div>
+</form>

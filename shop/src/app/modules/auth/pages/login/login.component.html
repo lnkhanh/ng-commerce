@@ -1,0 +1,53 @@
+<div class="signin-container">
+  <div class="sign-in">
+      <div class="signin-content">
+        <div class="signin-image">
+          <figure><img src="/assets/imgs/signin-image.jpg" alt="sing up image"></figure>
+          <a routerLink="/auth/sign-up" class="signup-image-link">Create an account</a>
+        </div>
+
+        <div class="signin-form">
+          <h2 class="form-title">Sign in</h2>
+  				<kt-auth-notice></kt-auth-notice>
+          <form [formGroup]="loginForm" autocomplete="off" class="register-form" id="login-form">
+            <div class="form-group">
+              <label for="your_name"><i class="fa fa-user" aria-hidden="true"></i></label>
+              <input type="email" formControlName="email" autocomplete="off" />
+              <span class="error" *ngIf="isControlHasError('email','required')">
+                {{ 'AUTH.VALIDATION.REQUIRED_FIELD' }}
+              </span>
+              <span class="error" *ngIf="isControlHasError('email','email')">
+                {{ 'AUTH.VALIDATION.INVALID_FIELD' }}
+              </span>
+              <span class="error" *ngIf="isControlHasError('email','minlength')">
+                {{ 'AUTH.VALIDATION.MIN_LENGTH_FIELD' }} 3
+              </span>
+              <span class="error" *ngIf="isControlHasError('email','maxlength')">
+                {{ 'AUTH.VALIDATION.MAX_LENGTH_FIELD' }} 320
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="your_pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
+              <input type="password" formControlName="password" autocomplete="off" />
+              <span class="error" *ngIf="isControlHasError('password','required')">
+                {{ 'AUTH.VALIDATION.REQUIRED_FIELD' }}
+              </span>
+              <span class="error" *ngIf="isControlHasError('password','minlength')">
+                {{ 'AUTH.VALIDATION.MIN_LENGTH_FIELD' }} 3
+              </span>
+              <span class="error" *ngIf="isControlHasError('password','maxlength')">
+                {{ 'AUTH.VALIDATION.MAX_LENGTH_FIELD' }} 100
+              </span>
+            </div>
+            <div class="form-group">
+							<a routerLink="/auth/forgot-password" class="signup-image-link text-left">Forgot password</a>
+            </div>
+            <div class="form-group form-button">
+              <button type="submit" (click)="submit()" [ngClass]="{'kt-spinner': loading}" id="signin" class="form-submit">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->

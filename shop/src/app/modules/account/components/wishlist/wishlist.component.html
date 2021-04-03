@@ -1,0 +1,20 @@
+<ng-container *ngIf="(wishList$ | async) as wishlist">
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<ng-container *ngIf="wishlist.length; else noWishList">
+						<div *ngFor="let item of wishlist">
+							<wishlist-item [item]="item" (handleRemoveWishList)="onRemoveWishList(item)"></wishlist-item>
+						</div>
+					</ng-container>
+					<ng-template #noWishList>
+						<div class="text-center">No items found!</div>
+					</ng-template>
+				</div>
+			</div>
+		</div>
+	</div>
+	<paginator [paginator$]="paginator$" [pageSizeOptions]="pageSizeOptions" [loading$]="loadingList$"
+		(doChange)="onChangePaging($event)"></paginator>
+</ng-container>

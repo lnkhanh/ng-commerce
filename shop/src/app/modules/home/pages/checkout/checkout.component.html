@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="py-5 text-center">
+		<h2>Checkout</h2>
+	</div>
+	<div class="row" *ngIf="(user$ | async) as user">
+		<ng-container *ngIf="(cart$ | async) as cart">
+			<div class="col-md-4 order-md-2 mb-4">
+				<checkout-items [cart]="cart"></checkout-items>
+			</div>
+			<div class="col-md-8 order-md-1">
+				<billing-address-form [user]="user" (handleBillingAddressFormChanges)="onBillingAddressFormChanges($event)"></billing-address-form>
+				<hr class="mb-4">
+				<button class="btn btn-primary btn-lg btn-block" [disabled]="!isCheckoutValid" (click)="onCheckout()">Continue to checkout</button>
+			</div>
+		</ng-container>
+	</div>
+</div>

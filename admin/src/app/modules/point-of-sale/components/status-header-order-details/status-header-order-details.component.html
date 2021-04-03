@@ -1,0 +1,28 @@
+<div class="header-container">
+  <div class="row">
+    <div class="col-3">
+      <!-- <ion-buttons slot="start">
+        <ion-button (click)="onPrint()">
+          <ion-icon name="print-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons> -->
+    </div>
+    <div class="col-6">
+      <div class="steps clearfix">
+        <ul role="tablist">
+          <li *ngFor="let step of steps; let idx = index"
+            [ngClass]="{ last: idx == steps.length - 1, done: step.selected, disabled: currentStatus == cancelledStatus }">
+            <a (click)="onUpdateStatus(step)" matTooltip="Change order status"><span class="current-info audible"> </span>
+              <div class="title">
+                <span class="step-icon">
+                  <mat-icon>{{ step.icon }}</mat-icon>
+                </span>
+                <span class="step-text">{{ step.label }}</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

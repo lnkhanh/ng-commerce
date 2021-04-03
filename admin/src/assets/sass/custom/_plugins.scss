@@ -1,0 +1,93 @@
+.upload-container {
+	.upload-template {
+		background-image: url(/assets/images/cloud_960_720.png);
+		background-color: rgb(245, 252, 255);
+		background-repeat: no-repeat;
+		background-size: 60px;
+		background-position: center center;
+		min-height: 100px;
+		margin: 20px auto;
+		border: 2px dashed #1C8ADB;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #9ecbec !important;
+			opacity: 0.8;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+    }
+    & > div {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    img {
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      background-color: #fff;
+    }
+    &.has-img {
+      overflow: hidden;
+      &::before {
+        content: '';
+        display: block;
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        width: 30%;
+        height: 30%;
+        max-width: 60px;
+        max-height: 60px;
+        background-color: white;
+        background-image: url(/assets/img/cloud_960_720.png);
+        background-repeat: no-repeat;
+        background-size: 75% 75%;
+        background-position: center center;
+        border-radius: 50% 0 0 0;
+      }
+    }
+
+    .img-container {
+      padding-bottom: 100%;
+    }
+  }
+
+
+	.files-list {
+		display: flex;
+		justify-content: space-between;
+		margin: 10px auto;
+		background: #ffffff;
+		border: 1px dashed;
+		border-radius: 12px;
+		padding: 5px;
+		color: #1c8adb;
+
+		.delete-file {
+			background: transparent;
+			border: none;
+			cursor: pointer;
+		}
+
+		.delete-file img {
+			width: 20px;
+		}
+	}
+}

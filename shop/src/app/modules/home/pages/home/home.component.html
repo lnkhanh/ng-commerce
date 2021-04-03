@@ -1,0 +1,12 @@
+<banner></banner>
+<div class="container">
+    <list-product
+        [products$]="products$"
+        [paginator$]="paginator$"
+        [loadingList$]="loadingList$"
+        (handlePageChange)="onProductPageChange($event)"
+        (handleOpenProductQuickViewModal)="onOpenProductQuickViewModal($event)"
+        (handleAddToCart)="onAddToCart($event)"
+        (handleAddToWishList)="onAddToWishList($event)"
+    ></list-product>
+</div>

@@ -1,0 +1,49 @@
+.dashboard-sale-tab {
+  .sale-activity-chart {
+    padding: 20px;
+    border: 1px solid rgba(74, 74, 74, 0.2);
+    border-radius: 5px;
+
+    select {
+      min-width: 50px;
+      padding: 0 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .chart {
+    height: 450px;
+  }
+  .detail-product-sold {
+    margin: 40px 0 0;
+
+    .mat-table {
+      .mat-header-row,
+      .mat-row {
+        .mat-column-Name,
+        .mat-column-VariantUPC,
+        .mat-column-OrderDate,
+        .mat-column-Quantity,
+        .mat-column-Revenue {
+          padding: 8px 10px;
+        }
+
+        .mat-column-VariantUPC {
+          flex: 0 0 250px;
+        }
+
+        .mat-column-OrderDate,
+        .mat-column-Quantity {
+          flex: 0 0 150px;
+        }
+
+        .mat-column-Revenue {
+          flex: 0 0 150px;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}

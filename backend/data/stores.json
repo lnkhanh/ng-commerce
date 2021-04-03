@@ -1,0 +1,81 @@
+{ 
+    "_id" : ObjectId("5fa211b72ae50735edd287b2"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 1", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:28:07.944+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fa211bc2ae50735edd287b3"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 1", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:28:12.574+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fa211bd2ae50735edd287b4"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 1", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:28:13.752+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fa2124f2ae50735edd287b5"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 2", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:30:39.142+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fa212da2ae50735edd287b6"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 2", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:32:58.158+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fa2179a2ae50735edd287b7"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 3", 
+    "address" : "Sơewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:53:14.522+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fa218582ae50735edd287b8"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 3", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:56:24.626+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fa218ba2ae50735edd287b9"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 4", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:58:02.816+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fa218d32ae50735edd287ba"), 
+    "modifiedAt" : null, 
+    "name" : "Cửa hàng 5", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f9d0bd5f275b854f80a0dd4"), 
+    "createdAt" : ISODate("2020-11-04T02:58:27.260+0000"), 
+    "__v" : NumberInt(0)
+}

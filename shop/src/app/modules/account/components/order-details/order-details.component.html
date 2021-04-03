@@ -1,0 +1,6 @@
+<ng-container *ngIf="(order$ | async) as order">
+	<order-header [order]="order"></order-header>
+	<div>
+		<order-summary [order]="order"></order-summary>
+	</div>
+</ng-container>

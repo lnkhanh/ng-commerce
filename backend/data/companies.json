@@ -1,0 +1,77 @@
+{ 
+    "_id" : ObjectId("5f8add0a974aba3f611f3f8f"), 
+    "modifiedAt" : null, 
+    "createdAt" : ISODate("2020-10-17T12:01:14.724+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f8add80f3bdf83feb827cce"), 
+    "modifiedAt" : null, 
+    "name" : "Gym ABC", 
+    "address" : "Address sample", 
+    "createdAt" : ISODate("2020-10-17T12:03:12.033+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f8ade31d28e7840ee4cd697"), 
+    "modifiedAt" : null, 
+    "name" : "Gym ABC", 
+    "address" : "Address sample", 
+    "createdBy" : ObjectId("5f8ade31d28e7840ee4cd696"), 
+    "createdAt" : ISODate("2020-10-17T12:06:09.810+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f8bf700913dac580bfe721b"), 
+    "modifiedAt" : ISODate("2020-10-18T08:08:19.747+0000"), 
+    "name" : "Test Company 2", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f8add0a974aba3f611f3f8e"), 
+    "createdAt" : ISODate("2020-10-18T08:04:16.297+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f8bf98975ec375a8357ebc6"), 
+    "modifiedAt" : null, 
+    "name" : "Test Company", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f8add0a974aba3f611f3f8e"), 
+    "createdAt" : ISODate("2020-10-18T08:15:05.186+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f8bf9a5df4e9e5acbd9c6a6"), 
+    "modifiedAt" : null, 
+    "name" : "Test Company", 
+    "address" : "Somewhere", 
+    "createdBy" : ObjectId("5f8add0a974aba3f611f3f8e"), 
+    "createdAt" : ISODate("2020-10-18T08:15:33.445+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f9d90267de020061dca8791"), 
+    "modifiedAt" : null, 
+    "name" : "Gym ABC", 
+    "address" : "Address sample", 
+    "createdBy" : ObjectId("5f9d90267de020061dca8790"), 
+    "createdAt" : ISODate("2020-10-31T16:26:14.099+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f9e2becd3a1c3345e67fc0f"), 
+    "modifiedAt" : null, 
+    "name" : "Gym ABC", 
+    "address" : "Address sample", 
+    "createdBy" : ObjectId("5f9e2becd3a1c3345e67fc0e"), 
+    "createdAt" : ISODate("2020-11-01T03:30:52.517+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5fac9335f169f9c861c1e1d1"), 
+    "modifiedAt" : null, 
+    "name" : "Gym ABC", 
+    "address" : "Address sample", 
+    "createdBy" : ObjectId("5fac9335f169f9c861c1e1d0"), 
+    "createdAt" : ISODate("2020-11-12T01:43:17.111+0000"), 
+    "__v" : NumberInt(0)
+}

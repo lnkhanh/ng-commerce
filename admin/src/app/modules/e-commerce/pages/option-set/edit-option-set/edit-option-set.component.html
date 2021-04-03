@@ -1,0 +1,26 @@
+<kt-portlet>
+	<kt-portlet-header [title]="title" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+		<ng-container ktPortletTools>
+			<button class="btn btn-secondary kt-margin-r-10" mat-raised-button matTooltip="Back" (click)="onBack()">
+				<i class="la la-arrow-left"></i>
+				<span class="kt-hidden-mobile">Back</span>
+			</button>
+		</ng-container>
+	</kt-portlet-header>
+
+	<kt-portlet-body>
+		<div class="row">
+			<div class="col">
+				<option-set-form [optionSet$]="optionSet$" (handleSubmit)="onUpdateOptionSet($event)"></option-set-form>
+			</div>
+			<div class="col">
+				<ng-container *ngIf="(loading$ | async) === false">
+					<option-form (handleSubmit)="onSubmitNewOption($event)"></option-form>
+					<ng-container *ngIf="optionSetOptions && optionSetOptions.length">
+						<option-set-option-list [options]="optionSetOptions" (handleUpdateOptions)="onUpdateOptions($event)"></option-set-option-list>
+					</ng-container>
+				</ng-container>
+			</div>
+		</div>
+	</kt-portlet-body>
+</kt-portlet>

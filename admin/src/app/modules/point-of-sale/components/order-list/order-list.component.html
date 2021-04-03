@@ -1,0 +1,80 @@
+<ng-container *ngIf="dataSource">
+	<div class="mat-table__wrapper">
+		<mat-table class="lmat-elevation-z8" #table [dataSource]="dataSource" [style.minWidth]="'auto'">
+
+			<ng-container matColumnDef="store">
+				<mat-header-cell *matHeaderCellDef>Store</mat-header-cell>
+				<mat-cell *matCellDef="let order">{{order.storeName}}</mat-cell>
+			</ng-container>
+
+			<ng-container matColumnDef="table">
+				<mat-header-cell *matHeaderCellDef>Table</mat-header-cell>
+				<mat-cell *matCellDef="let order">{{order.tableName}}</mat-cell>
+			</ng-container>
+
+			<ng-container matColumnDef="phone">
+				<mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+				<mat-cell *matCellDef="let order">{{order.createdBy ? (order.createdBy.phone | phone) : '--'}}</mat-cell>
+			</ng-container>
+
+			<ng-container matColumnDef="status">
+				<mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+				<mat-cell *matCellDef="let order">
+					<mat-select [value]="order.status" (selectionChange)="onChangeOrderStatus($event, order.id)">
+						<mat-option *ngFor="let status of orderStatuses" [value]="status.val">
+							{{status.name}}
+						</mat-option>
+					</mat-select>
+				</mat-cell>
+			</ng-container>
+
+			<ng-container matColumnDef="userFullName">
+				<mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+				<mat-cell *matCellDef="let order">
+					{{order.createdBy ? order.createdBy.firstName + ' ' + order.createdBy.lastName : '--'}}</mat-cell>
+			</ng-container>
+
+			<ng-container matColumnDef="email">
+				<mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+				<mat-cell *matCellDef="let order">
+					{{order.createdBy ? order.createdBy.email : '--'}}</mat-cell>
+			</ng-container>
+
+			<ng-container matColumnDef="orderDate">
+				<mat-header-cell *matHeaderCellDef [style.flex]="'0 0 180px'">Order Date</mat-header-cell>
+				<mat-cell *matCellDef="let order" [style.flex]="'0 0 180px'">{{order.createdDate}}</mat-cell>
+			</ng-container>
+
+			<ng-container matColumnDef="actions">
+				<mat-header-cell *matHeaderCellDef [style.flex]="'0 0 100px'">
+					<span *ngIf="!showFull">Actions</span>
+					<button *ngIf="showFull" mat-icon-button color="primary" matTooltip="Show fullscreen" type="button"
+						(click)="onShowFullscreen()">
+						<mat-icon>fullscreen</mat-icon>
+					</button>
+				</mat-header-cell>
+				<mat-cell *matCellDef="let order" [style.flex]="'0 0 100px'">
+					<button (click)="onEditOrder(order)" mat-icon-button color="primary" matTooltip="Edit order">
+						<mat-icon>remove_red_eye</mat-icon>
+					</button>&nbsp;
+					<button mat-icon-button color="warn" matTooltip="Remove order" type="button" (click)="onRemoveOrder(order)">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</mat-cell>
+			</ng-container>
+
+			<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+			<mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+		</mat-table>
+		<div class="mat-table__message" *ngIf="!dataSource.hasItems">No records found</div>
+		<!-- Message for empty data  -->
+		<div class="mat-table__message" *ngIf="dataSource.isPreloadTextViewed$ | async">Please wait....</div>
+	</div>
+
+	<div class="mat-table__bottom">
+		<mat-spinner [diameter]="20" *ngIf="dataSource.loading$ | async"></mat-spinner>
+		<mat-paginator [pageSize]="10" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = getPaginatorData($event)"
+			[length]="dataSource.paginatorTotal$ | async" [showFirstLastButtons]="true"></mat-paginator>
+	</div>
+</ng-container>

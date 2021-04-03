@@ -1,0 +1,167 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+
+// hide bootstrap dropdown arrow globally
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.mat-table__wrapper--dashboard .mat-table {
+  min-width: 600px !important;
+  width: 100% !important;
+}
+
+.position-static {
+  position: static;
+}
+
+.btn,
+.dropdown {
+  &-width-default {
+    min-width: 100px;
+  }
+
+  & + .btn {
+    margin-left: 15px;
+  }
+}
+
+a .material-icons {
+  font-size: 13px!important;
+}
+
+label[required] {
+  &::after {
+    content: "\f069";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-size: 8px;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    color: #f64e60;
+    position: relative;
+    top: -5px;
+    left: 4px;
+  }
+}
+.mat-table {
+  width: 100%;
+
+  thead th {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+
+  tbody tr {
+    &:nth-of-type(odd) {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  td,
+  th {
+    vertical-align: middle;
+  }
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.actionloading {
+  position: relative;
+  display: block;
+  min-height: 10rem;
+
+  &::before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+  }
+  &::after {
+    content: "";
+    color: #007bff;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: text-bottom;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border 0.75s linear infinite;
+    animation: spinner-border 0.75s linear infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.5rem;
+    margin-top: -1.5rem;
+    z-index: 1000;
+  }
+}
+
+.full-width-dialog .mat-dialog-container {
+  width: 90vw !important;
+}
+
+.avatar {
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+
+  .avatar-container {
+    padding: 8px 8px 8px 0;
+  }
+
+  .name {
+    font-weight: 500;
+    display: block;
+  }
+
+  .email {
+    font-weight: 500;
+    color: #b5b5c3;
+  }
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.kt-list-timeline
+  .kt-list-timeline__items
+  .kt-list-timeline__item
+  .kt-list-timeline__badge {
+  padding-top: 35px;
+}
+
+.filter-box {
+  .md-drppicker {
+    top: calc(100% + 10px);
+    right: 0 !important;
+    left: unset !important;
+    min-width: 500px;
+  }
+}

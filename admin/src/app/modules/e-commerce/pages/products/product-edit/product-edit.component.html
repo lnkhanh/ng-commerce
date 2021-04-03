@@ -1,0 +1,54 @@
+<kt-portlet>
+	<kt-portlet-header title="Product Details" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+		<ng-container ktPortletTools>
+			<a [routerLink]="['../../']" class="btn btn-secondary kt-margin-r-10" mat-raised-button matTooltip="Quay lại">
+				<i class="la la-arrow-left"></i>
+				<span class="kt-hidden-mobile">Back</span>
+			</a>
+		</ng-container>
+	</kt-portlet-header>
+
+	<kt-portlet-body>
+		<mat-tab-group [(selectedIndex)]="selectedTab" (selectedTabChange)="onTabChange($event)">
+			<mat-tab [ngClass]="{ 'actionloading': (loading$ | async) }">
+				<ng-template mat-tab-label>
+					<i class="mat-tab-label-icon fa fa-user"></i>
+					General
+				</ng-template>
+				<ng-template matTabContent>
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<kt-product-general [product$]="product$" [categories$]="categories$" [stores$]="stores$" (handleSubmit)="onGeneralFormSubmit($event)"></kt-product-general>
+						</div>
+					</div>
+				</ng-template>
+			</mat-tab>
+			<mat-tab>
+				<ng-template mat-tab-label>
+					<i class="mat-tab-label-icon fa fa-images"></i>
+					Photo
+				</ng-template>
+				<ng-template matTabContent>
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<kt-product-image [loading$]="loading$" [photos$]="productPhotos$" (handleUploadProductPhotos)="onUploadProductPhotos($event)"></kt-product-image>
+						</div>
+					</div>
+				</ng-template>
+			</mat-tab>
+			<mat-tab>
+				<ng-template mat-tab-label>
+					<i class="mat-tab-label-icon fa fa-plus-circle"></i>
+					Option Sets
+				</ng-template>
+				<ng-template matTabContent>
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<product-option-sets></product-option-sets>
+						</div>
+					</div>
+				</ng-template>
+			</mat-tab>
+		</mat-tab-group>
+	</kt-portlet-body>
+</kt-portlet>

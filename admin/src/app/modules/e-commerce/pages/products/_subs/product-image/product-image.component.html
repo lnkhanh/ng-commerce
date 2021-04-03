@@ -1,0 +1,45 @@
+<div [ngClass]="{'actionloading': (loading$ | async)}">
+	<form enctype="multipart/form-data" autocomplete="off" #modelForm="ngForm">
+		<div class="upload-container">
+			<div class="upload-template" DXPDragDropUpload style="height: 200px;" (click)="fileInput.click()"
+				(onFileDropped)="uploadFile($event)">
+				<input hidden type="file" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/svg+xml" #fileInput multiple
+					(change)="uploadFile($event.target.files)">
+			</div>
+		</div>
+	</form>
+	<div class="row">
+		<div class="col">
+			<h4>Product photos</h4>
+			<hr />
+		</div>
+	</div>
+	<div *ngIf="photos$">
+		<mat-table class="lmat-elevation-z8" #table [dataSource]="photos$">
+			<ng-container matColumnDef="image">
+				<mat-header-cell *matHeaderCellDef> Photo </mat-header-cell>
+				<mat-cell *matCellDef="let photo">
+					<div class="table-img-thumbnail">
+						<lazy-img maxHeight="98" maxWidth="98" [src]="photo"></lazy-img>
+					</div>
+				</mat-cell>
+			</ng-container>
+
+			<!-- Action Column -->
+			<ng-container matColumnDef="actions">
+				<mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+				<mat-cell *matCellDef="let photo">
+					<button mat-icon-button aria-label="Archive" title="Archive" color="warn"
+						(click)="onArchive(photo)">
+						<i class="far fa-file-archive"></i>
+					</button>
+				</mat-cell>
+			</ng-container>
+			<!-- /end Action Column -->
+
+			<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+			<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+		</mat-table>
+		<div class="mat-table__message text-center" *ngIf="(photos$ | async).length == 0">No photos!</div>
+	</div>
+</div>

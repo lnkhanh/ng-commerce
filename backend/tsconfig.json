@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "src/app/types/*", "src/admin/types/*", "src/frontsite/types/*"],
+      "@app/*": ["src/app/*"],
+      "@admin/*": ["src/admin/*"],
+      "@frontsite/*": ["src/frontsite/*"],
+      "@config/*": ["src/config/*"],
+      "@src/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}

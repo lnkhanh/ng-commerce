@@ -1,0 +1,126 @@
+<kt-portlet>
+  <kt-portlet-header title="Dashboard" [class]="'kt-portlet__head--lg'">
+    <ng-container ktPortletTools>
+      <div class="row pt-1">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Store</mat-label>
+            <mat-select name="storeId" value="null" (selectionChange)="onFilterStoreChange($event.value)">
+              <mat-option class="mat-select-search">
+                <ngx-mat-select-search name="storeField" [formControl]="storeFilterCtrl"
+                  placeholderLabel="Search by Store Name" noEntriesFoundLabel="No Store data found!">
+                </ngx-mat-select-search>
+              </mat-option>
+              <mat-option value="null">All</mat-option>
+              <mat-option *ngFor="let store of (stores | async)" value="{{ store.id }}">
+                {{store.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col pt-2">
+          <div ngbDropdown placement="bottom-right" #myDrop="ngbDropdown" class="d-inline-block">
+            <button ngbDropdownToggle class="btn btn-label-brand btn-bold btn-sm dropdown-toggle">
+              From: {{ filter.fromDate | shortDatetime }} To: {{ filter.toDate | shortDatetime }}
+            </button>
+            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-fit">
+              <ul class="kt-nav">
+                <li class="kt-nav__section kt-nav__section--first">
+                  <span class="kt-nav__section-text">Choose an action:</span>
+                </li>
+                <li class="kt-nav__item" [ngClass]="{'active': filterDayActive === filterDayAction.today}">
+                  <span ngbDropdownItem class="kt-nav__link" (click)="onFilterDaysAction(filterDayAction.today)">
+                    <span class="kt-nav__link-text">Today</span>
+                  </span>
+                </li>
+                <li class="kt-nav__item" [ngClass]="{'active': filterDayActive === filterDayAction.yesterday}">
+                  <span ngbDropdownItem class="kt-nav__link" (click)="onFilterDaysAction(filterDayAction.yesterday)">
+                    <span class="kt-nav__link-text">Yesterday</span>
+                  </span>
+                </li>
+                <li class="kt-nav__item" [ngClass]="{'active': filterDayActive === filterDayAction.last7Days}">
+                  <span ngbDropdownItem class="kt-nav__link" (click)="onFilterDaysAction(filterDayAction.last7Days)">
+                    <span class="kt-nav__link-text">Last 7 Days</span>
+                  </span>
+                </li>
+                <li class="kt-nav__item" [ngClass]="{'active': filterDayActive === filterDayAction.last30Days}">
+                  <span ngbDropdownItem class="kt-nav__link" (click)="onFilterDaysAction(filterDayAction.last30Days)">
+                    <span class="kt-nav__link-text">Last 30 Days</span>
+                  </span>
+                </li>
+                <li class="kt-nav__item" [ngClass]="{'active': filterDayActive === filterDayAction.thisMonth}">
+                  <span ngbDropdownItem class="kt-nav__link" (click)="onFilterDaysAction(filterDayAction.thisMonth)">
+                    <span class="kt-nav__link-text">This Month</span>
+                  </span>
+                </li>
+                <li class="kt-nav__item" [ngClass]="{'active': filterDayActive === filterDayAction.customRange}">
+                  <span class="kt-nav__link" style="cursor: auto;">
+                    <span class="kt-nav__link-text">Custom Range</span>
+                  </span>
+                  <div class="row my-2">
+                    <div class="col">
+                      <dashboard-custom-range-datetime
+                        [fromDate]="filter.fromDate" [toDate]="filter.toDate"
+                        (onCancel)="myDrop.close()"
+                        (onApply)="onCustomRangeDayAction($event, myDrop)"
+                      >
+                      </dashboard-custom-range-datetime>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </kt-portlet-header>
+
+  <kt-portlet-body>
+    <mat-tab-group #tabs [selectedIndex]="tabActive" (selectedTabChange)="handleTabAction($event.index)">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          Overview
+        </ng-template>
+        <ng-template matTabContent>
+          <dashboard-overview-tab
+            [orderRevenue]="orderRevenue | async"
+            [loading]="orderRevenueLoading | async"
+            (onViewMore)="handleOnViewMore($event)"
+          ></dashboard-overview-tab>
+        </ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          Sale
+        </ng-template>
+        <ng-template matTabContent>
+          <dashboard-sale-tab
+            [saleActivity]="saleActivity | async"
+            [topSale]="(paginator | async).pageSize || '5'"
+            [loading]="saleActivityLoading | async"
+            (onChangeTopSale)="handleOnChangePaging($event)"
+          ></dashboard-sale-tab>
+        </ng-template>
+      </mat-tab>
+      <!-- <mat-tab>
+        <ng-template mat-tab-label>
+          Order
+        </ng-template>
+        <ng-template matTabContent>
+          <order-revenue-chart
+            [data]="orderRevenueSummary | async"
+            [loading]="loadingOrderRevenueSummary | async">
+          </order-revenue-chart>
+          <order-revenue-list
+            [data]="orderRevenueDetail | async"
+            [paginator]="paginator | async"
+            [loading]="loadingOrderRevenueDetail | async"
+            (onChange)="handleOnChangePaging($event)"
+          >
+          </order-revenue-list>
+        </ng-template>
+      </mat-tab> -->
+    </mat-tab-group>
+  </kt-portlet-body>
+</kt-portlet>

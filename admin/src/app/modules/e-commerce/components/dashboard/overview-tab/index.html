@@ -1,0 +1,40 @@
+<div class="dashboard-overview-tab">
+  <dashboard-overview
+    [totalSales]="orderRevenue && orderRevenue.Revenue"
+    [totalOrders]="orderRevenue && orderRevenue.TotalOrder"
+    [totalTax]="orderRevenue && orderRevenue.TotalTax"
+    [users]="orderRevenue && orderRevenue.Users"
+    (onViewMore)="handleOnViewMore($event)"
+  ></dashboard-overview>
+
+  <div class="revenue-chart">
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <mat-expansion-panel [expanded]="true" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Sale Revenue</mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <dashboard-chart
+            [chartName]="'sale-chart'"
+            [config]="orderRevenue && orderRevenue.Sale.length > 0 && getSaleChartConfig(orderRevenue.Sale)"
+            [loading]="loading"
+          ></dashboard-chart>
+        </mat-expansion-panel>
+      </div>
+      <div class="col-md-6 col-xs-12">
+        <mat-expansion-panel [expanded]="true" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Order Revenue</mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <dashboard-chart
+            [chartName]="'order-chart'"
+            [config]="orderRevenue && orderRevenue.Order.length > 0 && getOrderChartConfig(orderRevenue.Order)"
+            [loading]="loading"
+          ></dashboard-chart>
+        </mat-expansion-panel>
+      </div>
+    </div>
+  </div>
+</div>

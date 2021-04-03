@@ -1,0 +1,41 @@
+.filter-container {
+	margin-bottom: 25px;
+	border-bottom: 1px solid #fafbff;
+}
+
+.row {
+	margin: 0 15px;
+}
+
+button {
+	color: #0BB783;
+	background-color: #fff;
+	outline: none;
+	vertical-align: middle;
+	line-height: 1.5;
+	border-radius: 0.75rem;
+	border: 1px solid #0BB783;
+	font-size: 0.925rem;
+	font-weight: 600;
+	padding: 5px 8px;
+	margin: 0 10px 10px 0;
+
+	&.selected {
+		background-color: #0BB783;
+		color: #fff;
+	}
+}
+
+.form-group {
+	margin-bottom: 6px;
+	.input-icon {
+		position: relative;
+	
+		span{
+			right: 12px;
+			position: absolute;
+			bottom: 0;
+			top: 9px;
+		}
+	}
+}

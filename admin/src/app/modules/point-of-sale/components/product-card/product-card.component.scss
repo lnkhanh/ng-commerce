@@ -1,0 +1,27 @@
+  .product-card {
+    padding: 0 8px;
+		margin-bottom: var(--gap);
+    text-align: center;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 15px 0px;
+    width: 100%;
+    display: inline-block;
+    min-height: 45px;
+  }
+
+  .photo {
+    max-width: 100%;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: 3px 7px 11px -5px rgba(167, 167, 167, 1);
+    height: 160px;
+    width: 160px;
+    margin: auto;
+    display: block;
+    overflow: hidden;
+  }

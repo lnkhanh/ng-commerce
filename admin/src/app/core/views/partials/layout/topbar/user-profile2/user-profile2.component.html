@@ -1,0 +1,10 @@
+<div placement="bottom-right" *ngIf="user$ | async as _user"
+  class="kt-header__topbar-item kt-header__topbar-item--user">
+  <div class="kt-header__topbar-wrapper" style="cursor: context-menu;">
+    <span class="kt-header__topbar-icon" style="cursor: context-menu;"
+      [ngStyle]="{background: badgeBg, color: '#fff'}">
+      <strong>{{((_user.firstName || 'Un') + ' ' + (_user.lastName || 'know'))|firstLetter}}</strong>
+    </span>
+    <span class="kt-header__topbar-username">{{_user.firstName}} {{_user.lastName}}</span>
+  </div>
+</div>

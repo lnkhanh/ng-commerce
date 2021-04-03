@@ -1,0 +1,27 @@
+.dashboard-overview-tab {
+  .dashboard-overview {
+    .statistics {
+      background: rgba(23, 162, 184, 1);
+      border: rgba(23, 162, 184, .2);
+    }
+  }
+
+  .revenue-chart {
+    margin: 30px 0 0;
+
+    .mat-expansion-panel {
+      box-shadow: none;
+      border: 1px solid rgba(74, 74, 74, 0.2);
+
+      &-header {
+        position: relative;
+        height: unset !important;
+        padding: 20px;
+        font-weight: 500;
+      }
+    }
+    .mat-expansion-panel-body {
+      padding: 0 20px;
+    }
+  }
+}

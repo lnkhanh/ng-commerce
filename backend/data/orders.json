@@ -1,0 +1,75 @@
+{ 
+    "_id" : ObjectId("5f9af4335317732281c5cd3d"), 
+    "code" : "7DA5B5P5", 
+    "address" : "97/7 Le Quang Dinh", 
+    "products" : [
+        {
+            "id" : ObjectId("5f9845d2f0ccc8851613a04d"), 
+            "productId" : ObjectId("5f9831c9eed9587577a74308"), 
+            "title" : "Product 2", 
+            "image" : "", 
+            "quantity" : NumberInt(2), 
+            "availableQuantity" : NumberInt(2), 
+            "retailPrice" : NumberInt(15000), 
+            "salePrice" : NumberInt(100000), 
+            "slug" : "product-2-5f9831c9eed9587577a74308"
+        }
+    ], 
+    "statuses" : [
+
+    ], 
+    "user" : ObjectId("5f8add0a974aba3f611f3f8e"), 
+    "metadata" : null, 
+    "createdDate" : ISODate("2020-10-29T16:56:19.968+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f9af518e85f542337e603e6"), 
+    "code" : "7DA0GF8H", 
+    "address" : "97/7 Le Quang Dinh", 
+    "products" : [
+        {
+            "id" : ObjectId("5f9845d2f0ccc8851613a04d"), 
+            "productId" : ObjectId("5f9831c9eed9587577a74308"), 
+            "title" : "Product 2", 
+            "image" : "", 
+            "quantity" : NumberInt(2), 
+            "availableQuantity" : NumberInt(2), 
+            "retailPrice" : NumberInt(15000), 
+            "salePrice" : NumberInt(100000), 
+            "slug" : "product-2-5f9831c9eed9587577a74308"
+        }
+    ], 
+    "statuses" : [
+
+    ], 
+    "user" : ObjectId("5f8add0a974aba3f611f3f8e"), 
+    "metadata" : null, 
+    "createdDate" : ISODate("2020-10-29T17:00:08.193+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f9af613e85f542337e603e8"), 
+    "code" : "7DAEHWRK", 
+    "address" : "97/7 Le Quang Dinh", 
+    "products" : [
+        {
+            "id" : ObjectId("5f9af5fce85f542337e603e7"), 
+            "productId" : ObjectId("5f9831c9eed9587577a74308"), 
+            "title" : "Product 2", 
+            "image" : "", 
+            "quantity" : NumberInt(1), 
+            "availableQuantity" : NumberInt(1), 
+            "retailPrice" : NumberInt(15000), 
+            "salePrice" : NumberInt(100000), 
+            "slug" : "product-2-5f9831c9eed9587577a74308"
+        }
+    ], 
+    "statuses" : [
+
+    ], 
+    "user" : ObjectId("5f8add0a974aba3f611f3f8e"), 
+    "metadata" : null, 
+    "createdDate" : ISODate("2020-10-29T17:04:19.776+0000"), 
+    "__v" : NumberInt(0)
+}

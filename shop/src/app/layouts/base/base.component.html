@@ -1,0 +1,12 @@
+<topbar
+    [categories$]="categories$"
+    [isMenuProfileOpened$]="isMenuProfileOpened$"
+    [isCartOpened$]="isCartOpened$"
+    [user$]="user$"
+    [cart$]="cart$"
+    (handleToggleCart)="onToggleCart()"
+    (handleRemoveCartItem)="onRemoveCartItem($event)"
+    (handleToggleProfileMenu)="onToggleProfileMenu()"
+    (handleLogout)="onUserLogout()"></topbar>
+<router-outlet></router-outlet>
+<footer></footer>

@@ -1,0 +1,34 @@
+.form-group.hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  .input-group {
+    width: 0;
+  }
+  .form-control {
+    border: none;
+    visibility: hidden;
+  }
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range, .custom-day:hover {
+  background-color: rgb(88, 103, 221);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(88, 103, 221, 0.5);
+}

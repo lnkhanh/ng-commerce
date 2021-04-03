@@ -1,0 +1,68 @@
+<h5 class="mb-3">Billing address</h5>
+<form [formGroup]="form" [ngClass]="{ 'was-validated': form.invalid && !form.pristine }">
+  <!-- Address -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="firstName">First name</label>
+      <input type="text" class="form-control form-control-sm" id="firstName" required minlength="2" maxlength="26"
+        formControlName="firstName">
+      <div class="invalid-feedback" *ngIf="f.firstName.errors">
+        {{getErrorMessage(f.firstName)}}
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="lastName">Last name</label>
+      <input type="text" class="form-control form-control-sm" id="lastName" required minlength="2" maxlength="26"
+        formControlName="lastName">
+      <div class="invalid-feedback" *ngIf="f.lastName.errors">
+        {{getErrorMessage(f.lastName)}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="email">Email</label>
+      <input type="email" class="form-control form-control-sm" id="email" formControlName="email">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="phone">Phone</label>
+      <input type="text" class="form-control form-control-sm" id="phone" placeholder="" formControlName="phone"
+        maxlength="20" [mask]="adminConfig.mask.phone" required>
+      <div class="invalid-feedback" *ngIf="f.phone.errors">
+        {{getErrorMessage(f.phone)}}
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="address">Address</label>
+    <textarea class="form-control form-control-sm" id="address" formControlName="address" required minlength="15"
+      maxlength="255"></textarea>
+    <div class="invalid-feedback" *ngIf="f.address.errors">
+      {{getErrorMessage(f.address)}}
+    </div>
+  </div>
+  <!-- \Address -->
+  <hr class="mb-4">
+
+  <!-- Payment -->
+  <h5 class="mb-3">Payment</h5>
+
+  <div class="d-block my-3">
+    <div class="custom-control custom-radio">
+      <input id="credit" formControlName="paymentMethod" type="radio" class="custom-control-input" checked=""
+        required="" value="COD">
+      <label class="custom-control-label" for="credit">Cash on Delivery</label>
+    </div>
+  </div>
+  <!-- \Payment -->
+  <hr class="mb-4">
+
+  <!-- Note-->
+  <h5 class="mb-3">Order note</h5>
+  <div class="d-block my-3">
+    <textarea class="form-control form-control-sm" placeholder="Note" formControlName="orderNote"></textarea>
+  </div>
+  <!-- \Note -->
+</form>

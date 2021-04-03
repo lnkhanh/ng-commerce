@@ -1,0 +1,40 @@
+export const AdminConfig: { [name: string]: any } = {
+  locale: 'vi-VN',
+  format: {
+    date: 'DD/MM/YY',
+    dayMonth: 'MMM DD',
+    dateTime: 'MM/DD/YYYY HH:mm',
+    dateTimeAM: 'MM/DD/YYYY hh:mm A',
+    apiDate: 'YYYY/MM/DD',
+    apiDateTime: 'YYYY-MM-DD[T]HH:mm:ss',
+    apiDateTimeNoZ: 'YYYY-MM-DD[T]HH:mm:ss',
+    apiDateMonthYear: 'MMM DD YYYY',
+    urlParam: 'YYYY-MM-DD',
+    time: 'hh:mm A',
+    displayDate: 'MMMM DD, YYYY'
+  },
+  mask: {
+    phone: '(000) 000-0000',
+    date: 'd0/M0/0000',
+    zipCode: '00000',
+    money: '0*.00',
+    number: '0*.00',
+    integer: '0*',
+    tax: '0*.0000',
+    sku: '0000000000000',
+  },
+  regex: {
+    password: '^(?=.*[a-zA-Z])(?=.*[0-9]).{6,12}',
+    url: /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/,
+    shortCode: '^[A-Z0-9_]{1,20}$',
+    email: /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9-]{2,}(\.[a-z0-9]{2,4}){1,2}$/,
+    leadTimeKeyPress: /^[0-9mhdw ]+$/,
+    leadTime: [
+      /^(?:(?<minutes>\d+)m\s*)?(?:(?<hours>\d+)h\s*)?(?:(?<days>\d+)d\s*)?(?:(?<weeks>\d+)w\s*)?$/,
+      /^(?:(?<weeks>\d+)w\s*)?(?:(?<days>\d+)d\s*)?(?:(?<hours>\d+)h\s*)?(?:(?<minutes>\d+)m\s*)?$/,
+    ],
+  },
+  pattern: {},
+  pipe: {},
+  pageSizeOptions: [5, 10, 25, 50, 100],
+};

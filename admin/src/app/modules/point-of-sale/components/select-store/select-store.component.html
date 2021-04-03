@@ -1,0 +1,6 @@
+<div *ngIf="(stores$ | async) as stores">
+	<mat-select [(value)]="currentStoreId">
+		<mat-option value="">Select store</mat-option>
+		<mat-option [value]="store.id" *ngFor="let store of stores" (click)="onChangeStore(store)">{{ store.name }}</mat-option>
+	</mat-select>
+</div>

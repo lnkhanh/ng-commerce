@@ -1,0 +1,37 @@
+<div class="main-header navbar-fixed-top">
+	<div class="header-menu">
+			<div class="header-mobile-nav-wrapper">
+					<button type="button" class="navbar-toggle" (click)="collapse = !collapse">
+							<span class="fa fa-bars fa-2x"></span>
+					</button>
+			</div>
+			<div class="header-logo-wrapper" style="width: 20%">
+				<a routerLink="/home">
+					<img class="header-logo-image" [src]="logo" alt="Hero">
+				</a>
+			</div>
+			<div class="header-nav-wrapper" *ngIf="(categories$ | async) as categories" style="width: 60%">
+					<ul class="header-nav">
+							<li class="header-nav-item" *ngFor="let cat of categories">
+									<a [routerLink]="['/home']" [queryParams]="{ c: cat.slug }" [class.active]="isLinkActive('/home' + '?c=' + cat.slug)">{{cat.name}}</a>
+							</li>
+					</ul>
+			</div>
+			<div class="header-end-wrapper" style="width: 20%">
+				<ng-container *ngIf="(user$ | async) as user; else loggedOut">
+					<cart-dropdown [isOpened$]="isCartOpened$" [cart$]="cart$" (handleToggleMenu)="onToggleCart()" (handleRemoveCartItem)="onRemoveCartItem($event)"></cart-dropdown>
+					<account-dropdown [isOpened$]="isMenuProfileOpened$" [user]="user" (handleToggleMenu)="onToggleProfileMenu()" (handleLogout)="onLogout()"></account-dropdown>
+				</ng-container>
+			</div>
+			<ng-template #loggedOut>
+				<a routerLink="/auth/login" class="btn btn-outline-primary btn-sm mt-2">Login</a>
+			</ng-template>
+	</div>
+	<ng-container *ngIf="(categories$ | async) as categories">
+		<ul class="mobile-header-nav" *ngIf="collapse" (click)="collapse = !collapse">
+				<li *ngFor="let cat of categories">
+						<a [routerLink]="['/home']" [queryParams]="{ cat: cat.slug }">{{cat.name}}</a>
+				</li>
+		</ul>
+	</ng-container>
+</div>

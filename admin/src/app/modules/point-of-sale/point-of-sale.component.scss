@@ -1,0 +1,30 @@
+kt-pos-layout {
+	background-color: #CCEEF2;
+	padding: 30px;
+}
+kt-base {
+	opacity: 0;
+	height: 100%;
+
+	.kt-grid--root {
+		height: 100%;
+	}
+}
+
+.kt-page--loaded {
+	kt-base {
+		opacity: 1;
+		transition: opacity 1s ease-in-out;
+	}
+}
+
+select-store {
+	position: fixed;
+	top: 10px;
+	left: 18px;
+	z-index: 100;
+	width: 150px;
+	border: 1px solid #e2e2e2;
+	padding: 10px;
+	border-radius: 12px;
+}

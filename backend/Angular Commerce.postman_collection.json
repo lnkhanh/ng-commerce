@@ -1,0 +1,2816 @@
+{
+	"info": {
+		"_postman_id": "e9bd949b-820d-47b3-8b3b-f7b1db520145",
+		"name": "Angular Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "List category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/categories?pageSize=10&pageIndex=1&keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add new category",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test Company\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/categories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove store",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/categories/5fa2806d5c2981ad6b3b0a56",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"categories",
+										"5fa2806d5c2981ad6b3b0a56"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update store",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Category updated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/categories/5fa2806d5c2981ad6b3b0a56",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"categories",
+										"5fa2806d5c2981ad6b3b0a56"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get store",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/categories/5fa2806d5c2981ad6b3b0a56",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"categories",
+										"5fa2806d5c2981ad6b3b0a56"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Get orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/orders?pageSize=10&pageIndex=1&keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get order details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Encoding",
+										"value": "gzip, deflate"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en-US,en;q=0.9,vi;q=0.8,it;q=0.7"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Referer",
+										"value": "http://vn.leflair.local/en/account/orders"
+									},
+									{
+										"key": "Cookie",
+										"value": "_ga=GA1.2.432796221.1565229960; _gcl_au=1.1.1045032416.1565229963; _hjid=2d83266c-fbca-4033-a824-70fd9202e69b; ins-mig-done=1; leflair.connect.sid=; i18next=en; _gid=GA1.2.1728379140.1565491548; leflair.connect2.sid=s%3AR8_0c4k0hasCyIhjixwIAW0Ncwe-JeUn.ylWMjSgsP9cZMw%2BcU4QHPtsI4f3XPCdhmijEN8dH5Xs; _gat=1"
+									},
+									{
+										"key": "Proxy-Connection",
+										"value": "keep-alive"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{admin}}/orders/5ff168b1b400ec4c38639d80",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"orders",
+										"5ff168b1b400ec4c38639d80"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get orders in day",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/orders/pos/in-day?pageIndex=1&pageSize=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"orders",
+										"pos",
+										"in-day"
+									],
+									"query": [
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive order item",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/orders/5fac9335f169f9c861c1e1d0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"orders",
+										"5fac9335f169f9c861c1e1d0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change order status",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"status\": 2}"
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/orders/order-status/5fb9df93769d76f6010b7aac",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"orders",
+										"order-status",
+										"5fb9df93769d76f6010b7aac"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update order",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"quantity\": 0}"
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/orders/5ff168b1b400ec4c38639d80/5faf5d0d3a30d0302dfe17eb",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"orders",
+										"5ff168b1b400ec4c38639d80",
+										"5faf5d0d3a30d0302dfe17eb"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "Add to cart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": \"5f9831c9eed9587577a74308\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/cart-items/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"cart-items",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update quantity in cart",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"quantity\": 3}"
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/cart-items/5f9841b508344d822cb91a6f",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"cart-items",
+										"5f9841b508344d822cb91a6f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove cart item",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/cart-items/5f9841b508344d822cb91a6f",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"cart-items",
+										"5f9841b508344d822cb91a6f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User cart",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/cart-items/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"cart-items",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get checkout",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "http://localhost:8088"
+									},
+									{
+										"key": "Accept-Encoding",
+										"value": "gzip, deflate, br"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en-US,en;q=0.9,vi;q=0.8"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Referer",
+										"value": "http://localhost:8088/vn/checkout"
+									},
+									{
+										"key": "Cookie",
+										"value": "_ga=GA1.1.2052262724.1555635335; adminer_key=37dbeb123e0748071e439d023c0a35d1; __distillery=8d72f6f_f0df374f-109e-4419-b33e-d6bf22112ca6-cb4da9e0d-ccdc84469533-b7a0; leady_session_id=baec14ec-a5d4-432f-b37a-823aeb5312c4; io=K0USbvsag7RMjZgQAAAC; showWarningDesktopOnSearchPageKey=skipped; mp_65030dfef6cd3c31219d5dcc9f443e2b_mixpanel=%7B%22distinct_id%22%3A%20%22gupapyrustest16%40gmail.com%22%2C%22%24device_id%22%3A%20%2216be5597771443-0177cb0750cdeb-37617e02-232800-16be559777241c%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24user_id%22%3A%20%22gupapyrustest16%40gmail.com%22%7D; tok=IjabYiE8Ru4RdDPOWhc0vpIjk1T2PU1Y; companyId=6d93b94f-7282-4af1-ac5a-aa23c81f0101; companyLogo=; companyName=Gu%20Dev; setupWizardSkipped=skipped; adminer_sid=spp37vpatlv4352l0iq4s0qac0; _identity=ace60ae2137c6af196c4467b7eec048eff92ea25701ea3a3691fe4e2617e0d4fa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22LS2ZcGJWVVIakOGe50o-Th0ro8rg1VSc%22%2C2592000%5D%22%3B%7D; _csrf=bc7c2530ac6420ff825735ad7d774193683a1b574ae4b2bff575cee83d39afaea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ITGpu3gFNf4VI2d-Tipwa0afSxpKSLjQ%22%3B%7D; PHPSESSID=36f91cf0505fc92ca59985b26c539cd9; _gid=GA1.1.1196179745.1564419302; i18next=vn; _gcl_au=1.1.1618418894.1564419307; _hjid=7514b8ad-025d-4266-a0b5-b9e5b537f70b; ins-mig-done=1; leflair.connect2.sid=s%3AFLrxKP1t6Yl2BtOD58u1jj9hiTT8jarq.zW%2B%2FigktNKeNn6B9Rpky1RYwMaPGzhjEAWxCR4sLXsU; _gat=1"
+									},
+									{
+										"key": "Connection",
+										"value": "keep-alive"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/checkout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"checkout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Do checkout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "http://localhost:8088"
+									},
+									{
+										"key": "Accept-Encoding",
+										"value": "gzip, deflate, br"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en-US,en;q=0.9,vi;q=0.8"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Referer",
+										"value": "http://localhost:8088/vn/checkout"
+									},
+									{
+										"key": "Cookie",
+										"value": "_ga=GA1.1.2052262724.1555635335; adminer_key=37dbeb123e0748071e439d023c0a35d1; __distillery=8d72f6f_f0df374f-109e-4419-b33e-d6bf22112ca6-cb4da9e0d-ccdc84469533-b7a0; leady_session_id=baec14ec-a5d4-432f-b37a-823aeb5312c4; io=K0USbvsag7RMjZgQAAAC; showWarningDesktopOnSearchPageKey=skipped; mp_65030dfef6cd3c31219d5dcc9f443e2b_mixpanel=%7B%22distinct_id%22%3A%20%22gupapyrustest16%40gmail.com%22%2C%22%24device_id%22%3A%20%2216be5597771443-0177cb0750cdeb-37617e02-232800-16be559777241c%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24user_id%22%3A%20%22gupapyrustest16%40gmail.com%22%7D; tok=IjabYiE8Ru4RdDPOWhc0vpIjk1T2PU1Y; companyId=6d93b94f-7282-4af1-ac5a-aa23c81f0101; companyLogo=; companyName=Gu%20Dev; setupWizardSkipped=skipped; adminer_sid=spp37vpatlv4352l0iq4s0qac0; _identity=ace60ae2137c6af196c4467b7eec048eff92ea25701ea3a3691fe4e2617e0d4fa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22LS2ZcGJWVVIakOGe50o-Th0ro8rg1VSc%22%2C2592000%5D%22%3B%7D; _csrf=bc7c2530ac6420ff825735ad7d774193683a1b574ae4b2bff575cee83d39afaea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ITGpu3gFNf4VI2d-Tipwa0afSxpKSLjQ%22%3B%7D; PHPSESSID=36f91cf0505fc92ca59985b26c539cd9; _gid=GA1.1.1196179745.1564419302; i18next=vn; _gcl_au=1.1.1618418894.1564419307; _hjid=7514b8ad-025d-4266-a0b5-b9e5b537f70b; ins-mig-done=1; leflair.connect2.sid=s%3AFLrxKP1t6Yl2BtOD58u1jj9hiTT8jarq.zW%2B%2FigktNKeNn6B9Rpky1RYwMaPGzhjEAWxCR4sLXsU; _gat=1"
+									},
+									{
+										"key": "Connection",
+										"value": "keep-alive"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": null,\n    \"method\": \"COD\",\n    \"cart\": [\n        {\n                \"id\": \"6024c2914efd0c7611716f8d\",\n                \"productId\": \"5faf4e453b478e25dccf3449\",\n                \"title\": \"Cappuccino\",\n                \"image\": \"http://localhost:5000/api/admin/v1/assets/products/5faf4e453b478e25dccf3449/270_crop_CAPPUCINO-1605324489659.png\",\n                \"quantity\": 3,\n                \"availableQuantity\": 3,\n                \"retailPrice\": 54000,\n                \"salePrice\": 0,\n                \"slug\": \"cappuccino-5faf4e453b478e25dccf3449\",\n                \"categoryId\": \"5faf40c8d4cfea1a0d92c1d7\",\n                \"note\": \"\"\n            },\n            {\n                \"id\": \"602b5d669ba6f0494efd5c0a\",\n                \"productId\": \"5faf4e593b478e25dccf344a\",\n                \"title\": \"Americano\",\n                \"image\": \"http://localhost:5000/api/admin/v1/assets/products/5faf4e593b478e25dccf344a/270_crop_AMERICANO-1605324473506.png\",\n                \"quantity\": 1,\n                \"availableQuantity\": 1,\n                \"retailPrice\": 44000,\n                \"salePrice\": 0,\n                \"slug\": \"americano-5faf4e593b478e25dccf344a\",\n                \"categoryId\": \"5faf40c8d4cfea1a0d92c1d7\"\n            }\n    ],\n    \"address\": \"97/7 Le Quang Dinh\",\n    \"phone\": \"0399779990\",\n    \"note\": \"Pla pla\",\n    \"storeId\": \"5fdf23c80c22df7ea396b753\",\n    \"tableName\": \"No table\",\n    \"source\": 2\n}"
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/checkout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"checkout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "List product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/products?pageSize=10&pageIndex=1&keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"products"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add new product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Product 4\",\n    \"description\": \"Bla bla\",\n    \"retailPrice\": 15000,\n    \"salePrice\": 100000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/products",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/products/5f982fa43e6ab673d9b39262",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"products",
+										"5f982fa43e6ab673d9b39262"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"The first product - updated\",\n    \"description\": \"Bla bla\",\n    \"retailPrice\": 15000,\n    \"salePrice\": 100000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/products/5f982fa43e6ab673d9b39262",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"products",
+										"5f982fa43e6ab673d9b39262"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/products/5faf4e593b478e25dccf344a",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"products",
+										"5faf4e593b478e25dccf344a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload product photos",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/Users/khanhluong/Downloads/IMG_4079.JPG"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/Users/khanhluong/Downloads/IMG_4769.JPG"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/products/upload/photos/5fa134d79ee3dd06769f642e",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"products",
+										"upload",
+										"photos",
+										"5fa134d79ee3dd06769f642e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List product for POS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/products/pos/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"products",
+										"pos",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Variant - Add new",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sample variant\",\n    \"_retailPrice\": 12000,\n    \"_salePrice\": 11000,\n    \"displayOrder\": 0,\n    \"description\": \"\",\n    \"dimension\": null,\n    \"optionsSets\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/product-variant/:productId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"product-variant",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "5faf4e593b478e25dccf344a"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Variant - Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"displayOrder\": 0,\n    \"optionsSets\": [],\n    \"name\": \"Sample variant updated\",\n    \"_retailPrice\": 12000,\n    \"_salePrice\": 11000,\n    \"description\": \"\",\n    \"dimension\": null,\n    \"_id\": \"605bffe210213e1567b63949\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/product-variant/:productId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"product-variant",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "5faf4e593b478e25dccf344a"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Variant - Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/product-variant/:productId/:variantId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"product-variant",
+										":productId",
+										":variantId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "5faf4e593b478e25dccf344a"
+										},
+										{
+											"key": "variantId",
+											"value": "605c032daff3f2192a08ded4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"item": [
+						{
+							"name": "Store - List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/stores?pageSize=10&pageIndex=1&keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"stores"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store - Add new",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test Company\",\n    \"address\": \"Somewhere\",\n    \"companyId\": \"5f8add0a974aba3f611f3f8f\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/stores",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"stores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store - Remove",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/stores/5f8bfaebed6e1b5c2df40b78",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"stores",
+										"5f8bfaebed6e1b5c2df40b78"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store - Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test Branch 2\",\n    \"address\": \"Somewhere\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/stores/5f8bfaebed6e1b5c2df40b78",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"stores",
+										"5f8bfaebed6e1b5c2df40b78"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store - Get detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/stores/5f8add80f3bdf83feb827cce",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"stores",
+										"5f8add80f3bdf83feb827cce"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store Table - List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/store-tables/:storeId?pageSize=10&pageIndex=1&keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"store-tables",
+										":storeId"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "storeId",
+											"value": "5fdf23c80c22df7ea396b753"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store Table - Add new",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"storeId\": \"5fdf23c80c22df7ea396b753\",\n    \"name\": \"Table 1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/store-tables",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"store-tables"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store Table - Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Table 1 updated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/store-tables/5ffe56b9ea061ce1d88ee079",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"store-tables",
+										"5ffe56b9ea061ce1d88ee079"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store Table - Remove",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/store-tables/5ffe56b9ea061ce1d88ee079",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"store-tables",
+										"5ffe56b9ea061ce1d88ee079"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Customer list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/customers?page=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update customer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Khanh\",\n    \"lastName\": \"Luong\",\n    \"fullName\": \"Khanh Luong\",\n    \"sex\": \"1\",\n    \"school\": \"LL\",\n    \"job\": \"Dev\",\n    \"phone\": \"123456789\",\n    \"introduce\": \"Bla bla bla\",\n    \"branchId\": \"1bc\",\n    \"isActivate\": true,\n    \"email\": \"e20@test.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/customers/5f9e2becd3a1c3345e67fc0e",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"customers",
+										"5f9e2becd3a1c3345e67fc0e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add new customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@e.com\",\n    \"password\": \"samplepass\",\n    \"firstName\": \"Sample\",\n    \"lastName\": \"User\",\n    \"phone\": \"123123123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/customers/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"customers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove customer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/customers/5fa0324d865a6ee33e2db04c",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"customers",
+										"5fa0324d865a6ee33e2db04c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get customer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.ng-commerce.local/api/admin/v1/customers/:id",
+									"protocol": "http",
+									"host": [
+										"api",
+										"ng-commerce",
+										"local"
+									],
+									"path": [
+										"api",
+										"admin",
+										"v1",
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5f9d55e6b50aec77d8ef453c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change customer password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"password\": \"Khanh535\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/customers/change-password/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"customers",
+										"change-password",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "System User",
+					"item": [
+						{
+							"name": "User list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/users?page=4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update user",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Khanh\",\n    \"lastName\": \"Luong\",\n    \"fullName\": \"Khanh Luong\",\n    \"sex\": \"1\",\n    \"school\": \"LL\",\n    \"job\": \"Dev\",\n    \"phone\": \"123456789\",\n    \"introduce\": \"Bla bla bla\",\n    \"branchId\": \"1bc\",\n    \"isActivate\": true,\n    \"email\": \"e20@test.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/users/5f9e2becd3a1c3345e67fc0e",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"users",
+										"5f9e2becd3a1c3345e67fc0e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add new user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@e.com\",\n    \"password\": \"samplepass\",\n    \"firstName\": \"User\",\n    \"lastName\": \"Admin\",\n    \"phone\": \"123123123\",\n    \"role\": \"USER_SYSTEM\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/users/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/users/5f8a874f8d507e28140c3fa9",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"users",
+										"5f8a874f8d507e28140c3fa9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://api.ng-commerce.local/api/admin/v1/users/:id",
+									"protocol": "http",
+									"host": [
+										"api",
+										"ng-commerce",
+										"local"
+									],
+									"path": [
+										"api",
+										"admin",
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5fa26814806c7193913541c1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"password\": \"Khanh535\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/users/change-password/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"users",
+										"change-password",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload user avatar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/Users/khanhluong/Desktop/1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/users/upload/avatar/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"users",
+										"upload",
+										"avatar",
+										":id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5fa26814806c7193913541c1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove user avatar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/users/remove-avatar/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"users",
+										"remove-avatar",
+										":id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5fa26814806c7193913541c1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"user@demo.com\",\n\t\"password\": \"admin123\"  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/account/sign-in",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"account",
+										"sign-in"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Lougout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/account/sign-out",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"account",
+										"sign-out"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"e20@e.com\",\n    \"password\": \"khanh535\",\n    \"firstName\": \"f2\",\n    \"lastName\": \"l2\",\n    \"phone\": \"123123123\",\n    \"companyName\": \"Gym ABC\",\n    \"companyAddress\": \"Address sample\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/account/sign-up",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"account",
+										"sign-up"
+									]
+								},
+								"description": "Create account from landing page."
+							},
+							"response": []
+						},
+						{
+							"name": "Get user profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/account",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"currentPassword\": \"khanh535\",\n\t\"newPassword\": \"Khanh535\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/account/change-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"account",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update profile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Khanh\",\n    \"lastName\": \"Luong\",\n    \"gender\": \"1\",\n    \"phone\": \"123456789\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/account",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"account"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Company",
+					"item": [
+						{
+							"name": "List company",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/companies?pageSize=10&pageIndex=1&keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"companies"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add new company",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test Company\",\n    \"address\": \"Somewhere\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/companies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"companies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove company",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/companies/5f8add0a974aba3f611f3f8f",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"companies",
+										"5f8add0a974aba3f611f3f8f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update company",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test Company 2\",\n    \"address\": \"Somewhere\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/companies/5f8bf700913dac580bfe721b",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"companies",
+										"5f8bf700913dac580bfe721b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get company",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/companies/5f8add80f3bdf83feb827cce",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"companies",
+										"5f8add80f3bdf83feb827cce"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Common",
+					"item": [
+						{
+							"name": "Get product photo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/assets/products/5fa134d79ee3dd06769f642e/IMG_4079-1604567898324.JPG",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"assets",
+										"products",
+										"5fa134d79ee3dd06769f642e",
+										"IMG_4079-1604567898324.JPG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user avatar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/assets/user-avatars/5fa26767b9de6792b624b513/IMG_4079-1607150264766.JPG",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"assets",
+										"user-avatars",
+										"5fa26767b9de6792b624b513",
+										"IMG_4079-1607150264766.JPG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Backup DB",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/db/backup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"db",
+										"backup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restore DB",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"601a5127143cd619a4583e02\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{admin}}/db/restore",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"db",
+										"restore"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get backups",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/db/backup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"db",
+										"backup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove backup",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/db/backup/5fd0f35906cec6573b081611",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"db",
+										"backup",
+										"5fd0f35906cec6573b081611"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Report",
+					"item": [
+						{
+							"name": "Get order revenue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/report/order/revenue?start=2020-11-01&end=2020-12-20",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"report",
+										"order",
+										"revenue"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "2020-11-01"
+										},
+										{
+											"key": "end",
+											"value": "2020-12-20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get top sales",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{admin}}/report/order/top-sales?start=2020-11-01&end=2020-12-20&top=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{admin}}",
+										"report",
+										"order",
+										"top-sales"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "2020-11-01"
+										},
+										{
+											"key": "end",
+											"value": "2020-12-20"
+										},
+										{
+											"key": "top",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restore sample data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{admin}}/db/restore-sample-data",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{admin}}",
+								"db",
+								"restore-sample-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create default user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user1@demo.com\",\n    \"password\": \"admin123\",\n    \"firstName\": \"Demo\",\n    \"lastName\": \"User\",\n    \"phone\": \"1234567890\",\n    \"role\": \"USER_SYSTEM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{admin}}/users/sign-up-default-user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{admin}}",
+								"users",
+								"sign-up-default-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Frontsite",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"user@demo.com\",\n\t\"password\": \"admin123\"  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/sign-in",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"sign-in"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Auth",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"auth"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"dev1@test.com\",\n    \"password\": \"admin123\",\n    \"firstName\": \"Sample\",\n    \"lastName\": \"User\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/sign-up",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"sign-up"
+									]
+								},
+								"description": "Create account from landing page."
+							},
+							"response": []
+						},
+						{
+							"name": "Update profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Khanh\",\n    \"lastName\": \"Luong\",\n    \"gender\": \"M\",\n    \"phone\": \"123456789\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload user avatar",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/Users/khanhluong/Desktop/dxp-logo.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/upload/avatar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"upload",
+										"avatar"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove user avatar",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/remove-avatar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"remove-avatar"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wishlist - Add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"productId\": \"5faf5d7a3a30d0302dfe17ef\"  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/wishlist",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"wishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wishlist - Get list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/wishlist?pageSize=10&pageIndex=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"wishlist"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wishlist - Check is added",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/wishlist/added/:productId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"wishlist",
+										"added",
+										":productId"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "5faf5d7a3a30d0302dfe17ef"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wishlist - Remove",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/account/wishlist/:wishlistId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"account",
+										"wishlist",
+										":wishlistId"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "wishlistId",
+											"value": "604045af4c70c002b0d28ea2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Get orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/orders?pageSize=10&pageIndex=1&keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get order details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDAwMzE3NDc5NTcwODMzNzdlOGZiZDgiLCJpYXQiOjE2MTM5NTcwNzgsImV4cCI6MTYxNDMxNzA3OH0.9dRhbCJMFgQyypN0A0umgY5niTxLSTzlPmTTqCpGVe4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/orders/D4YDYM4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"orders",
+										"D4YDYM4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Search products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/products?pageSize=10&pageIndex=1&keyword=&catSlug=delicious-cakes",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"products"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": ""
+										},
+										{
+											"key": "catSlug",
+											"value": "delicious-cakes"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/products/5faf4e593b478e25dccf344a",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"products",
+										"5faf4e593b478e25dccf344a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Get all categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/categories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "Add to cart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": \"5faf4e593b478e25dccf344a\",\n    \"quantity\": 5\n}"
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/cart-items/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"cart-items",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User cart",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/cart-items/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"cart-items",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update quantity in cart",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"quantity\": 3}"
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/cart-items/6020dd730b0cf8c3fa9ca64b",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"cart-items",
+										"6020dd730b0cf8c3fa9ca64b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove cart item",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/cart-items/6020dd730b0cf8c3fa9ca64b",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"cart-items",
+										"6020dd730b0cf8c3fa9ca64b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Do checkout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": null,\n    \"method\": \"COD\",\n    \"cart\": [\n        {\n            \"id\": \"602b6585060a0b5bdad1aa5f\",\n            \"productId\": \"5faf4e593b478e25dccf344a\",\n            \"title\": \"Americano\",\n            \"image\": \"http://localhost:5000/api/admin/v1/assets/products/5faf4e593b478e25dccf344a/270_crop_AMERICANO-1605324473506.png\",\n            \"quantity\": 2,\n            \"availableQuantity\": 2,\n            \"retailPrice\": 44000,\n            \"salePrice\": 0,\n            \"slug\": \"americano-5faf4e593b478e25dccf344a\",\n            \"categoryId\": \"5faf40c8d4cfea1a0d92c1d7\"\n        }\n    ],\n    \"address\": \"97/7 Le Quang Dinh\",\n    \"phone\": \"0399779990\",\n    \"note\": \"Pla pla\",\n    \"storeId\": \"5fdf23c80c22df7ea396b753\",\n    \"tableName\": \"No table\",\n    \"source\": 2\n}"
+								},
+								"url": {
+									"raw": "{{url}}/{{frontsite}}/checkout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{frontsite}}",
+										"checkout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Test API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

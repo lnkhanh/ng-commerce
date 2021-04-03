@@ -1,0 +1,12 @@
+<div class="kt-portlet">
+  <h2 mat-dialog-title>Order List</h2>
+  <div mat-dialog-content>
+    <pos-order-list [dataSource]="orderDataSource" [displayedColumns]="orderListColumns"
+      (handlePagination)="onOrderPagination($event)"
+      (handleChangeStatus)="onChangeOrderStatus($event)" (handleEdit)="onEditOrder($event)"
+      (handleRemove)="onRemoveOrder($event)"></pos-order-list>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+  </div>
+</div>

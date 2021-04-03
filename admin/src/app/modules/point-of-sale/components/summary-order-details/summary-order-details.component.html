@@ -1,0 +1,52 @@
+<h2 class="order-header">Order Information</h2>
+<div *ngIf="order$ | async as order">
+	<div *ngIf="order.customer as customer">
+		<ul>
+			<li>
+				<label>Order #:</label>
+				<span>
+					<strong>#{{ order.code }}</strong>
+				</span>
+			</li>
+			<li>
+				<label style="color: red">Note:</label>
+				<span>{{ order.note || '--' }}</span>
+			</li>
+			<li>
+				<label>Buyer Name:</label>
+				<span>{{ customer.firstName }} {{ customer.lastName }}</span>
+			</li>
+			<li>
+				<label>Buyer Phone:</label>
+				<span>{{ customer.phone }}</span>
+			</li>
+			<li>
+				<label>Buyer Email:</label>
+				<span>{{ customer.email }}</span>
+			</li>
+			<li>
+				<label>Order Status:</label>
+				<span>
+					<span class="badge badge-primary">{{ getOrderStatusName(order.status) }}</span>
+				</span>
+			</li>
+			<li>
+				<label>Order Quantity:</label>
+				<span>{{ order.qty }}</span>
+			</li>
+			<li>
+				<label>Order Total:</label>
+				<span>{{ order.total | formatCurrency }}</span>
+			</li>
+			<li>
+				<label>Order Time:</label>
+				<span>{{ order.createdDate }}</span>
+			</li>
+			<li *ngIf="order.user">
+				<label>Order By:</label>
+				<span>{{ order.user.firstName }} {{ order.user.lastName }}</span>
+			</li>
+		</ul>
+	</div>
+	<p *ngIf="!order">Order not found!</p>
+</div>
